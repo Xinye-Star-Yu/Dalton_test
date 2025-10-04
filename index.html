@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deep Learning–Driven Multi-Omics for Cancer (bbaf440) — Part 1</title>
+  <meta name="description" content="Concise, SEO-friendly guide to how deep learning integrates multi-omics to improve cancer detection, diagnosis, prognosis, and therapy selection." />
+  <link rel="canonical" href="https://example.com/multi-omics-deep-learning-cancer-bbaf440" />
+  <meta property="og:title" content="Deep Learning–Driven Multi-Omics for Cancer (bbaf440) — Part 1" />
+  <meta property="og:description" content="How deep learning integrates multi-omics to improve cancer detection, diagnosis, prognosis, and therapy selection." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://example.com/multi-omics-deep-learning-cancer-bbaf440" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    :root { --max: 880px; --accent:#0b5; --ink:#111; --muted:#555; --bg:#fff; }
+    html,body{background:var(--bg); color:var(--ink); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+    .wrap{max-width:var(--max); margin:40px auto 64px; padding:0 20px;}
+    header h1{font-size:clamp(28px, 5vw, 42px); line-height:1.15; margin:0 0 8px;}
+    header p.kicker{color:var(--muted); margin:0 0 18px; font-size:1rem; letter-spacing:.2px}
+    header .meta{color:var(--muted); font-size:.95rem; margin-top:8px}
+    h2{font-size:clamp(22px, 3.2vw, 28px); margin:34px 0 10px}
+    h3{font-size:clamp(18px, 2.6vw, 22px); margin:28px 0 8px}
+    p{margin:14px 0}
+    ul{margin:10px 0 18px 22px}
+    .highlight{background:#f6fff9; border-left:4px solid var(--accent); padding:14px 16px; border-radius:8px}
+    .byline{font-style:italic}
+    .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
+    .divider{height:1px;background:#e7e7e7;margin:26px 0}
+    .tag{display:inline-block;background:#eefbf2;border:1px solid #d7f4e3;color:#0a5133;
+         padding:2px 8px;border-radius:999px;font-size:.8rem;margin-right:6px}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Deep Learning–Driven Multi-Omics for Cancer (bbaf440)",
+    "about":["multi-omics","deep learning","cancer","precision oncology"],
+    "keywords":"multi-omics, deep learning, cancer, genomics, proteomics, metabolomics",
+    "author":[{"@type":"Person","name":"Zhang J."},{"@type":"Person","name":"Che Y."},{"@type":"Person","name":"Liu R."},{"@type":"Person","name":"Wang Z."},{"@type":"Person","name":"Liu W."}],
+    "datePublished":"2025-08-01",
+    "publisher":{"@type":"Organization","name":"Briefings in Bioinformatics"},
+    "mainEntityOfPage":"https://example.com/multi-omics-deep-learning-cancer-bbaf440"
+  }
+  </script>
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to content</a>
+  <div class="wrap" id="content">
+    <header>
+      <p class="kicker">Article Summary • Precision Oncology</p>
+      <h1>Deep Learning–Driven <em>Multi-Omics</em> for Cancer: What Figure 2 Teaches Us</h1>
+      <p class="byline">Based on <span class="tag">bbaf440</span> and adapted for the web.</p>
+      <p class="meta">This page distills how deep learning integrates multi-omics—genomics, epigenomics, transcriptomics, proteomics, metabolomics, radiomics, and single-cell data—to improve decisions in cancer care.</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <section aria-labelledby="why-multi-omics">
+      <h2 id="why-multi-omics">Why multi-omics now?</h2>
+      <p>
+        Cancer emerges from interacting changes across many molecular layers. A single “omics” snapshot rarely captures that complexity. 
+        <strong>Multi-omics</strong> analysis combines these layers and, when paired with modern deep learning, can discover non-linear, cross-modal patterns that classical statistics miss. 
+        The result is more accurate detection, richer subtype definitions, and better predictions of prognosis and drug response.
+      </p>
+      <p>
+        In the bbaf440 review, the authors outline how deep learning turns heterogeneous, high-dimensional datasets into actionable signals for precision oncology. 
+        Figure 2 in particular lays out a practical workflow that starts with rigorous preprocessing and ends with validated, interpretable models ready for clinical translation. 
+        This article walks through that logic and translates it into plain language for researchers and clinicians who want an overview they can actually use.
+      </p>
+    </section>
+
+    <section aria-labelledby="how-dl-helps">
+      <h2 id="how-dl-helps">How deep learning unlocks multi-omics</h2>
+      <p>
+        Deep models such as convolutional neural networks, recurrent and long short-term memory networks, autoencoders/variational autoencoders, graph convolutional networks, and Transformers are well suited to 
+        dense, noisy biomedical matrices. They learn hierarchical features, fuse signals across modalities, and scale to millions of parameters—capabilities that make them ideal for <em>multi-omics</em>.
+      </p>
+      <div class="highlight">
+        <strong>Integration strategies you’ll actually use</strong>
+        <ul>
+          <li><b>Early integration:</b> concatenate normalized feature sets before modeling; simple but can be dominated by large omics.</li>
+          <li><b>Mid-level (representation) integration:</b> learn modality-specific embeddings (e.g., AEs/VAEs) and fuse those representations.</li>
+          <li><b>Late integration:</b> train specialized models per omics and combine predictions via stacking or attention.</li>
+          <li><b>Attention & joint embeddings:</b> cross-modal attention and shared latent spaces align signals from genomics to imaging.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="key-findings">
+      <h2 id="key-findings">Key findings from bbaf440</h2>
+      <ul>
+        <li><b>Multi-omics + DL outperforms single-omics:</b> jointly modeling omics frequently yields higher accuracy/AUC for early detection, subtype classification, and survival prediction.</li>
+        <li><b>Workflows matter:</b> quality control, normalization, and batch correction strongly influence downstream performance; Figure 2 formalizes a six-step pipeline from preprocessing to validation.</li>
+        <li><b>Model choice is task-specific:</b> CNNs excel in radiology/histology fusion; RNN/LSTM handle temporal or sequential signals; AEs/VAEs compress high-dimensional omics; GCNs capture pathway and interaction graphs; Transformers enable flexible cross-modal attention.</li>
+        <li><b>Interpretability isn’t optional:</b> SHAP/LIME and saliency maps (e.g., Grad-CAM) improve clinical trust and help surface mechanisms, not just metrics.</li>
+        <li><b>Benchmarking is essential:</b> common metrics include accuracy, F1, AUC, sensitivity/specificity; TCGA/GEO and multi-center cohorts support robust validation.</li>
+        <li><b>Clinical touchpoints:</b> liquid biopsy, radiomics, and single-cell readouts are natural partners for <em>multi-omics</em> models that guide screening and treatment selection.</li>
+      </ul>
+      <p class="meta">End of Key Findings — continue with the figure and implications in Part 2.</p>
+    </section>
+  </div>
+</body>
+</html>
