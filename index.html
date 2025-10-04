@@ -3,59 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Multi-Omics Article — Parts 1 & 2 (bbaf440)</title>
-  <meta name="description" content="Both parts of the multi-omics article (bbaf440) combined on one page for easy reading." />
-  <style>
-    :root { --max: 980px; --ink:#111; --muted:#666; }
-    body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
-    .wrap{max-width:var(--max);margin:40px auto 64px;padding:0 18px}
-    header{margin-bottom:10px}
-    header h1{margin:.2rem 0 0;font-size:clamp(26px,4.5vw,38px)}
-    nav{margin:8px 0 22px}
-    nav a{margin-right:14px;text-decoration:none}
-    .divider{height:1px;background:#e7e7e7;margin:28px 0}
-    .part{scroll-margin-top:80px}
-    .note{color:var(--muted);font-size:.95rem}
-  </style>
+  <title><em>Pharmaco-Multi-omics</em>: Deep Learning Integration for Precision Oncology</title>
+  <meta name="description" content="Review-style summary on multi-omics and deep learning for precision oncology, featuring key findings, a workflow figure, and implications for clinical practice." />
+  <meta name="keywords" content="multi-omics, deep learning, precision oncology, genomics, proteomics, metabolomics, transcriptomics, radiomics" />
+  <meta name="robots" content="index,follow" />
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Deep Learning–Driven <em>Multi-Omics</em> (bbaf440) — Parts 1 &amp; 2</h1>
-      <p class="note">This page loads two separate HTML files and displays them together.</p>
-      <nav>
-        <a href="#p1">Jump to Part 1</a>
-        <a href="#p2">Jump to Part 2</a>
-      </nav>
-    </header>
 
-    <section id="p1" class="part" aria-label="Part 1 content"></section>
+  <!-- HTML Part 1 (Title → End of Key Findings) -->
+  <header>
+    <h1><em>Pharmaco-Multi-omics: Revolutionizing Precision Oncology Through Integrated Metabolomics, Proteomics, and Transcriptomics</em></h1>
+  </header>
 
-    <div class="divider"></div>
+  <section>
+    <h2>Transforming Cancer Care with Multi-omics</h2>
+    <p>
+      Cancer develops through interacting alterations across genomic, epigenomic, transcriptomic, proteomic, metabolic, radiologic, and single-cell layers. 
+      Studying any one layer in isolation captures only a sliver of tumor biology. <strong>Multi-omics</strong> addresses this limitation by jointly analyzing 
+      signals from several modalities, revealing cross-layer patterns that are invisible to single-omic approaches. Deep learning further strengthens this 
+      strategy by automatically learning hierarchical features and non-linear interactions, enabling robust prediction and biologically informed stratification.
+    </p>
+    <p>
+      In recent work, deep neural architectures—autoencoders and variational autoencoders for representation learning, graph convolutional networks for pathway 
+      and interaction graphs, convolutional networks for image-like inputs, recurrent and Transformer models for sequences—have delivered state-of-the-art results 
+      for early detection, diagnosis, molecular subtyping, prognosis, and treatment response prediction. Their advantage lies in harmonizing heterogeneous inputs 
+      and producing patient-level outputs that clinicians can act on, from risk scores to subtype assignments to therapy recommendations.
+    </p>
+    <p>
+      Successful studies follow a disciplined workflow: rigorous data preprocessing, dimensionality reduction to denoise and compress high-dimensional features, 
+      principled integration across omic layers, model development tailored to the clinical question, and stringent validation. Interpretable outputs—via feature 
+      attribution (e.g., SHAP, LIME), saliency, and pathway enrichment—help connect model signals to mechanisms, driving trust and hypothesis generation.
+    </p>
+  </section>
 
-    <section id="p2" class="part" aria-label="Part 2 content"></section>
-  </div>
+  <section>
+    <h2>Key Findings from Multi-omics Research</h2>
+    <ul>
+      <li><strong>Integration improves accuracy.</strong> Joint modeling across omics typically outperforms single-omic baselines for early detection, subtype classification, survival prediction, and therapy response tasks.</li>
+      <li><strong>Representation learning stabilizes signals.</strong> Autoencoders and VAEs compress noisy data into modality-specific embeddings that fuse cleanly and transfer across cohorts.</li>
+      <li><strong>Task-matched architectures matter.</strong> CNNs and vision Transformers excel with histology and radiology; RNN/LSTM and Transformers capture sequence or temporal effects; GCNs map pathway and protein-interaction structure.</li>
+      <li><strong>Clinical read-outs are feasible.</strong> Compact feature panels derived from multi-omics enable practical assays for response prediction and toxicity monitoring, reducing trial-and-error prescribing.</li>
+      <li><strong>Interpretability drives adoption.</strong> Model explanations highlight metabolites, proteins, transcripts, and pathways linked to outcomes, facilitating mechanism-centric decisions and prospective testing.</li>
+    </ul>
+  </section>
+  <!-- End of Key Findings -->
 
-  <script>
-    async function loadPart(src, mountId){
-      const res = await fetch(src, {cache: "no-store"});
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
+  <!-- HTML Part 2 (Figure Caption → End) -->
+  <section>
+    <figure>
+      <img src="assets/m_bbaf440f2.jpeg" alt="Workflow diagram for multi-omics analysis showing preprocessing, feature selection or dimensionality reduction, integration across omics, deep learning model development, analysis tasks, and validation for clinical translation." />
+      <figcaption>
+        <em>Figure 2.</em> Workflow for integrating <strong>multi-omics</strong> data with deep learning. The process begins with data cleaning and standardization, 
+        proceeds through feature selection or dimensionality reduction, and integrates modalities via early, mid-level (representation), or late fusion. 
+        Task-appropriate neural networks (e.g., CNN, RNN/LSTM, autoencoder/VAE, GCN, Transformer) are trained for classification, regression, or clustering. 
+        Performance is quantified using metrics such as accuracy, F1, AUC, and calibration, followed by internal and external validation to confirm 
+        generalizability before clinical use.
+      </figcaption>
+    </figure>
+  </section>
 
-      // import styles from the subpage <head>
-      doc.querySelectorAll('head style, head link[rel="stylesheet"]').forEach(node => {
-        const n = node.cloneNode(true);
-        n.setAttribute('data-imported-from', src);
-        document.head.appendChild(n);
-      });
+  <section>
+    <h1>Future Prospects in Multi-omics-Driven Oncology</h1>
 
-      // choose a sensible root from the subpage
-      const root = doc.querySelector('#content') || doc.querySelector('.wrap') || doc.body;
-      document.getElementById(mountId).innerHTML = root.innerHTML;
-    }
+    <h2>Technological Advancement</h2>
+    <p>
+      Rapid gains in sequencing, mass spectrometry, and imaging throughput expand the breadth and depth of patient profiling, while falling assay costs widen 
+      access. These advances increase statistical power and enable multi-center, multi-platform datasets essential for robust learning. Representation learning 
+      unifies disparate signals into aligned embeddings; attention mechanisms weight modalities by context; and uncertainty estimation quantifies confidence. 
+      Together, these innovations shorten the cycle from data generation to clinical utility and allow models to adapt as platforms evolve.
+    </p>
 
-    loadPart('part-1.html', 'p1');
-    loadPart('part-2.html', 'p2');
-  </script>
+    <h2>Clinical Implementation</h2>
+    <p>
+      Translation hinges on standard operating procedures: pre-analytical control, batch correction, transparent preprocessing, and documented model lifecycles. 
+      Clinically, multi-omics supports earlier detection using blood-based markers, refines subtyping from histology plus molecular features, and predicts 
+      therapy benefit and risk to guide regimen selection. Practical deployments embed assays and decision support into electronic health records, present 
+      succinct explanations, and track performance across sites to manage drift.
+    </p>
+
+    <h2>Expanded Applications</h2>
+    <p>
+      Beyond core genomics-transcriptomics-proteomics-metabolomics stacks, integration with radiomics and digital pathology enhances spatial context, 
+      while single-cell and spatial transcriptomics expose intratumoral heterogeneity and microenvironmental interactions. Microbiome features, immune receptor 
+      repertoires, and circulating biomarkers complement tissue profiles for non-invasive monitoring. As evidence accrues, multi-omics will inform clinical trial 
+      enrichment, adaptive dosing, and surveillance strategies across cancer types.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Multi-omics reframes oncology from single-marker heuristics to comprehensive models of tumor biology. When combined with deep learning, this approach 
+      yields accurate predictions, biologically grounded explanations, and practical panels that fit into routine care. Continued progress will depend on 
+      harmonized cohorts, rigorous external validation, and governance covering data privacy, fairness, and model updates. With these components in place, 
+      multi-omics stands to reduce diagnostic uncertainty, shorten time to effective therapy, and improve long-term outcomes.
+    </p>
+  </section>
+
+  <section>
+    <h2>Citation</h2>
+    <p>
+      Zhang, J., Che, Y., Liu, R., Wang, Z., &amp; Liu, W. (2025). Deep learning-driven multi-omics analysis: enhancing cancer diagnostics and therapeutics. 
+      <em>Briefings in Bioinformatics</em>, 26(4), bbaf440. <a href="https://doi.org/10.1093/bib/bbaf440">https://doi.org/10.1093/bib/bbaf440</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Note</h2>
+    <p>
+      This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
+    </p>
+  </section>
+
 </body>
 </html>
