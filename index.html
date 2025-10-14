@@ -1,79 +1,89 @@
 <!-- HTML Part 1 (Title → End of Key Findings) -->
 <header>
-  <h1><em>Deep Learning Integration of Pharmaco-Multi-omics for Precision Oncology</em></h1>
+  <h1><em>AI and Multi-omics for Precision Medicine in Celiac Disease</em></h1>
 </header>
 
 <section aria-labelledby="abstract">
   <p>
-    Precision oncology benefits when multiple biological layers are analyzed together. This review summarizes how <strong>multi-omics</strong> integration, paired with deep learning, improves early detection, molecular subtyping, prognosis, and therapy selection. We outline typical workflows for preprocessing, dimensionality reduction, data fusion, model development, and validation, then discuss practical steps for clinical translation.
+    Celiac disease is a chronic, immune mediated enteropathy triggered by dietary gluten. Diagnosis and longitudinal management are challenging because clinical presentations vary, histology is subjective, and serologic titers do not always track with mucosal health. This scientific summary explains how <strong>multi-omics</strong> integration, combined with artificial intelligence, can improve detection, stratification, and monitoring by linking molecular signals across several biological layers with image and clinical data. We describe typical analytical steps, give concrete examples of AI applications in endoscopy and pathology, and outline what laboratories and clinics need to operationalize these approaches in a reproducible and auditable manner.
   </p>
 </section>
 
 <section aria-labelledby="transforming">
-  <h2 id="transforming">Transforming Cancer Care with AI-based Multi-omics</h2>
+  <h2 id="transforming">Transforming Celiac Care with AI-based Multi-omics</h2>
   <p>
-    Tumors evolve through interacting alterations across genomic, epigenomic, transcriptomic, proteomic, metabolic, radiologic, and single-cell layers. Studying any one layer in isolation captures only a fraction of this biology. <strong>Multi-omics</strong> addresses the gap by jointly analyzing signals from several modalities. Cross-layer patterns become visible, allowing models to separate driver biology from background variation and technical artifacts.
+    A single assay rarely captures the complexity of celiac disease biology. Histology reflects villous atrophy, crypt hyperplasia, and intraepithelial lymphocytosis, but readings can differ between observers and sites. Serology detects autoreactive responses yet can be discordant with biopsy findings during healing or partial dietary adherence. HLA-DQ2 and HLA-DQ8 genotypes are necessary but not sufficient for diagnosis because these haplotypes are common in the general population. A <strong>multi-omics</strong> approach aggregates complementary signals from genomics, epigenomics, transcriptomics, proteomics, metabolomics, and the microbiome, then relates them to imaging and clinical features. Cross layer modeling uncovers mechanistic pathways that separate active disease, remission, and complications.
   </p>
   <p>
-    Deep neural architectures provide the machinery for this integration. Autoencoders and variational autoencoders learn low-noise embeddings from high-dimensional data. Graph convolutional networks reason over biological networks such as pathways and protein interactions. Convolutional networks are effective for image-like inputs from radiology and histology. Recurrent models and Transformers capture sequence context and long-range dependencies. Together, these tools align heterogeneous inputs and produce patient-level outputs that clinicians can act on: risk scores, subtype assignments, and therapy recommendations.
+    Artificial intelligence provides the pattern recognition needed to convert heterogeneous modalities into patient level predictions. In gastroenterology, computer vision systems trained on capsule endoscopy or duodenal video frames classify celiac disease versus controls and can quantify mucosal injury. In digital pathology, convolutional neural networks learn features associated with villous blunting and lymphocyte infiltration and can produce continuous severity indices that complement Marsh grades. In omics, representation learning compresses high dimensional profiles into stable embeddings, which can be fused across modalities using early, mid level, or late integration, and then interpreted with pathway analysis to link model outputs to biology.
   </p>
   <p>
-    A disciplined process is essential. Studies that succeed typically apply rigorous quality control and batch correction, choose dimensionality reduction that preserves structure, adopt an integration strategy matched to the task, and perform validation that reflects real clinical deployment. Interpretation methods such as SHAP and LIME for tabular omics, gradient or attention maps for images, and pathway-level enrichment link learned signals to mechanisms, which supports hypothesis generation and clinical trust.
+    The clinical motivation is strong. Undiagnosed disease is associated with increased risk of malignancy and other complications, and many patients experience long delays to diagnosis. By combining multi layer biology with automated interpretation, care teams can reduce reliance on invasive sampling for every decision point, identify candidates for earlier intervention, and standardize scoring across centers. These gains can support precision nutrition counseling, risk stratified follow up, and selection of patients for trials of adjunctive therapies beyond a gluten free diet.
   </p>
 </section>
 
 <section aria-labelledby="key-findings">
-  <h2 id="key-findings">Key Findings from Multi-omics Research</h2>
+  <h2 id="key-findings">Key Findings from AI and Multi-omics Studies in Celiac Disease</h2>
   <ul>
-    <li><strong>Integration improves accuracy.</strong> Joint modeling across omics commonly outperforms single-omic baselines for early detection, subtype classification, survival prediction, and therapy response.</li>
-    <li><strong>Representation learning stabilizes signals.</strong> Autoencoders and variational autoencoders compress noisy measurements into modality-specific embeddings that fuse cleanly and transfer across cohorts.</li>
-    <li><strong>Task-matched architectures matter.</strong> Convolutional networks and vision Transformers handle histology and radiology. Recurrent models and Transformers capture sequence or temporal effects. Graph convolutional networks encode pathway structure.</li>
-    <li><strong>Clinical readouts are feasible.</strong> Compact feature panels derived from multi-omics enable practical assays for response prediction and toxicity monitoring, which can reduce trial-and-error prescribing.</li>
-    <li><strong>Interpretability drives adoption.</strong> Model explanations highlight metabolites, proteins, transcripts, and pathways associated with outcomes, facilitating mechanism-centric decisions and prospective testing.</li>
-    <li><strong>Evaluation must be rigorous.</strong> External validation across sites with clear calibration, sensitivity, and specificity prevents over-optimism and clarifies generalizability.</li>
+    <li><strong>Integration improves discrimination.</strong> Joint analysis across genomics, transcriptomics, proteomics, metabolomics, and microbiome layers increases accuracy for detection and stratification relative to any single modality.</li>
+    <li><strong>Computer vision scales assessment.</strong> Automated analysis of endoscopic and capsule imagery offers reproducible scoring of villous architecture and can monitor response without repeated biopsy.</li>
+    <li><strong>Pathology AI reduces subjectivity.</strong> Image models align with pathologist grades while providing continuous indices that better capture subtle change.</li>
+    <li><strong>Immune and serologic signatures add specificity.</strong> Neoepitope patterns and repertoire features can distinguish celiac disease from controls and may track mucosal healing.</li>
+    <li><strong>Standardization is essential.</strong> Harmonized preanalytics, transparent preprocessing, and multi site validation are required for safe deployment.</li>
+    <li><strong>Clinical utility depends on explanation.</strong> Pathway level interpretation and compact marker panels support mechanistic insight and practical implementation.</li>
   </ul>
 </section>
 <!-- End of Key Findings -->
  
 <!-- HTML Part 2 (Figure Caption → End) -->
-<section aria-labelledby="figure2">
+<section aria-labelledby="figure3">
   <figure>
      <figcaption>
-      <em>Figure 2.</em> Workflow for integrating <strong>multi-omics</strong> data with deep learning. Steps include data cleaning and standardization, feature selection or dimensionality reduction, integration across modalities using early fusion, mid-level representation fusion, or late fusion, model development with architectures suited to the task (for example CNN, RNN or LSTM, autoencoder or VAE, graph convolutional network, Transformer), and performance assessment with accuracy, F1, AUC, and calibration metrics, followed by internal and external validation prior to clinical use. Source: Adapted from Zhang et al. (2025), Briefings in Bioinformatics.
+      <em>Figure 1.</em> Integration of <strong>multi-omics</strong> data with artificial intelligence for precision care in celiac disease. Biological samples such as blood are obtained and profiled across genomics, epigenomics, transcriptomics, proteomics, and metabolomics, with connections between layers shown to emphasize a systems biology view. Multi omics matrices are processed by AI pipelines that learn patient representations and perform clustering or classification. Outputs support population level stratification to identify celiac disease cases and guide personalized treatment choices, illustrated by patient groups and matched therapies. Source: Adapted from Piroozkhah et&nbsp;al. (2025), <em>Analytical Cellular Pathology</em> (Amsterdam).
     </figcaption>
   </figure>
 </section>
 
 <section aria-labelledby="future">
-  <h1 id="future">Future Prospects in Multi-omics-Driven Oncology</h1>
+  <h1 id="future">Future Prospects in AI-Enabled Multi-omics for Celiac Disease</h1>
 
   <h2>Technological Advancement</h2>
   <p>
-    Throughput in sequencing, mass spectrometry, and imaging continues to rise, while per-sample costs gradually fall. Larger, multi-center datasets support stronger generalization. Representation learning aligns modalities into shared spaces. Attention mechanisms weight each input by context. Uncertainty estimation quantifies confidence and flags out-of-distribution cases. Together these advances shorten the path from raw assay to clinical signal and make it practical to update models as platforms change.
+    Sequencing, mass spectrometry, and imaging platforms continue to gain throughput while costs decline, which enables larger cohorts with consistent protocols. Self supervised and contrastive learning create modality specific embeddings that are robust to instrument drift and missing values. Cross modal transformers and graph neural networks align features from pathways, networks, and spatial tissue context. Uncertainty estimation helps separate routine from edge cases, and shift detection alerts teams when inputs move outside the model training distribution. As longitudinal datasets grow to include diet adherence metrics and serial imaging, models can forecast relapse risk, time to mucosal healing, and probability of complications under specific management plans.
   </p>
 
   <h2>Clinical Implementation</h2>
   <p>
-    Translation requires standard operating procedures that are easy to audit. Pre-analytical control and harmonized protocols reduce technical drift. Versioned preprocessing and reproducible training offer traceability. Decision support embedded in the electronic health record presents clear recommendations with concise explanations. For example, a small panel of metabolomic and proteomic markers interpreted by a validated model can help select first-line therapy, identify patients likely to benefit from combination regimens, or prompt early review when toxicity risk is high.
+    Translation requires documented, auditable workflows. Pre analytical control should specify sampling, storage, and shipping conditions. Preprocessing must be versioned, with batch correction and normalization steps recorded so that results are traceable. Model training and validation should follow a plan that includes site held out evaluation and calibration reporting. Decision support can be embedded in the electronic health record with clear statements of what the model predicts, links to the evidence in images or features, and confidence intervals. For patients who cannot undergo invasive procedures, validated capsule pipelines offer noninvasive monitoring, while compact proteomic or metabolomic panels can inform follow up intervals and counseling.
   </p>
 
   <h2>Expanded Applications</h2>
   <p>
-    Beyond the core stack of genomics, transcriptomics, proteomics, and metabolomics, integration with radiomics and digital pathology adds spatial context. Single-cell and spatial transcriptomics expose intratumoral heterogeneity and microenvironmental interactions. Circulating biomarkers and immune receptor repertoires enable non-invasive monitoring. Microbiome features can complement host pathways that influence drug metabolism and inflammatory tone. These additions strengthen trial enrichment, adaptive dosing, and surveillance programs across cancer types.
+    Beyond core omics, radiomics and digital pathology add spatial and architectural information. Single cell and spatial transcriptomics reveal intraepithelial and lamina propria immune programs that relate to symptoms. Microbiome and metabolome features capture host microbe interactions that influence inflammation and nutrient absorption. T cell receptor and B cell receptor repertoire data can reveal motifs associated with activity and tolerance. These additions can refine trial enrichment, support adaptive dietary or pharmacologic strategies, and enable post treatment surveillance with minimally invasive assays.
+  </p>
+
+  <h2>Data Governance and Ethics</h2>
+  <p>
+    Governance should address privacy, equity, and model maintenance. Datasets need consent processes that explain secondary analysis and recontact. Fairness audits should evaluate performance across age groups, sexes, and ancestry backgrounds, and mitigation plans must be in place if disparities are found. Monitoring should track data drift and outcome drift, with scheduled updates after predefined quality gates are met. Documentation should include intended use, limitations, and failure modes in language that clinicians and patients can understand.
+  </p>
+
+  <h2>Methodological Considerations</h2>
+  <p>
+    Study design influences generalizability. Prospective sampling with predefined endpoints reduces bias. Clear definitions of outcomes such as histologic remission and symptomatic response improve label quality. When cohorts are small, nested cross validation and careful feature selection prevent leakage and overfitting. External validation across institutions gives a realistic view of transportability. Interpretation should be performed at both feature and pathway levels to connect model behavior to mechanism and to suggest hypotheses that can be tested in follow up experiments.
   </p>
 
   <h2>Conclusion</h2>
   <p>
-    Multi-omics reframes oncology from single-marker heuristics to comprehensive models of tumor biology. Combined with deep learning, integrated datasets yield accurate predictions, biologically grounded explanations, and compact panels that fit into routine care. Continued progress will depend on harmonized cohorts, rigorous external validation, transparent documentation, and governance that addresses privacy, fairness, and model updating. With these elements in place, multi-omics can reduce diagnostic uncertainty, shorten time to effective therapy, and improve long-term outcomes.
+    Celiac disease care is moving from isolated tests toward integrated models of patient biology. By combining multi omics with artificial intelligence, clinicians can achieve earlier detection, standardized severity assessment, and mechanism informed treatment planning. Success depends on harmonized cohorts, external validation, transparent documentation, and governance that supports continuous improvement. With these elements in place, AI enabled multi omics can reduce diagnostic uncertainty, shorten the time to the correct management plan, and improve long term outcomes for people with celiac disease.
   </p>
 </section>
 
 <section aria-labelledby="citation">
   <h2 id="citation">Citation</h2>
   <p>
-    Zhang, J., Che, Y., Liu, R., Wang, Z., &amp; Liu, W. (2025). Deep learning-driven multi-omics analysis: enhancing cancer diagnostics and therapeutics.
-    <em>Briefings in Bioinformatics</em>, 26(4), bbaf440.
-    <a href="https://doi.org/10.1093/bib/bbaf440">https://doi.org/10.1093/bib/bbaf440</a>.
+    Piroozkhah, M., Kahangi, M. F., Asri, N., Piroozkhah, M., Moradi, N., Nazemalhosseini-Mojarad, E., Salehi, Z., &amp; Rostami-Nejad, M. (2025). Toward Precision Medicine in Celiac Disease: Emerging Roles of Multiomics and Artificial Intelligence.
+    <em>Analytical cellular pathology</em> (Amsterdam), 2025, 6570955.
+    <a href="https://doi.org/10.1155/ancp/6570955">https://doi.org/10.1155/ancp/6570955</a>.
   </p>
 </section>
 
