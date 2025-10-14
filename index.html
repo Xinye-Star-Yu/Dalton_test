@@ -1,33 +1,99 @@
-<h1>Sweet Potato Metabolomics Reveals Key Nutrient Signatures Across Varieties</h1>
+<div class="paper">
+  <div class="paper-inner">
 
+  <!-- HTML Part 1 (Title → End of Key Findings) -->
+  <header>
+    <h1><em>Deep Learning Integration of Pharmaco-Multi-omics for Precision Oncology</em></h1>
+  </header>
 
-<p style="font-size: 1.1em; line-height: 1.6; margin-top: 1em; margin-bottom: 1em;">
+  <section aria-labelledby="abstract">
+    <p>
+      Precision oncology benefits when multiple biological layers are analyzed together. This review summarizes how <strong>multi-omics</strong> integration, paired with deep learning, improves early detection, molecular subtyping, prognosis, and therapy selection. We outline typical workflows for preprocessing, dimensionality reduction, data fusion, model development, and validation, then discuss practical steps for clinical translation.
+    </p>
+  </section>
 
-Untargeted LC–MS metabolomics was used to compare three sweet potato varieties, creating a high-resolution view of metabolites that shape flavor, color, and nutrition. The analysis resolved distinct metabolic fingerprints and uncovered variety-specific changes in amino acids, organic acids, and lipids. These profiles provide a foundation for breeding decisions and for linking metabolite pathways to consumer-relevant traits.
+  <section aria-labelledby="transforming">
+    <h2 id="transforming">Transforming Cancer Care with AI-based Multi-omics</h2>
+    <p>
+      Tumors evolve through interacting alterations across genomic, epigenomic, transcriptomic, proteomic, metabolic, radiologic, and single-cell layers. Studying any one layer in isolation captures only a fraction of this biology. <strong>Multi-omics</strong> addresses the gap by jointly analyzing signals from several modalities. Cross-layer patterns become visible, allowing models to separate driver biology from background variation and technical artifacts.
+    </p>
+    <p>
+      Deep neural architectures provide the machinery for this integration. Autoencoders and variational autoencoders learn low-noise embeddings from high-dimensional data. Graph convolutional networks reason over biological networks such as pathways and protein interactions. Convolutional networks are effective for image-like inputs from radiology and histology. Recurrent models and Transformers capture sequence context and long-range dependencies. Together, these tools align heterogeneous inputs and produce patient-level outputs that clinicians can act on: risk scores, subtype assignments, and therapy recommendations.
+    </p>
+    <p>
+      A disciplined process is essential. Studies that succeed typically apply rigorous quality control and batch correction, choose dimensionality reduction that preserves structure, adopt an integration strategy matched to the task, and perform validation that reflects real clinical deployment. Interpretation methods such as SHAP and LIME for tabular omics, gradient or attention maps for images, and pathway-level enrichment link learned signals to mechanisms, which supports hypothesis generation and clinical trust.
+    </p>
+  </section>
 
-</p>
+  <section aria-labelledby="key-findings">
+    <h2 id="key-findings">Key Findings from Multi-omics Research</h2>
+    <ul>
+      <li><strong>Integration improves accuracy.</strong> Joint modeling across omics commonly outperforms single-omic baselines for early detection, subtype classification, survival prediction, and therapy response.</li>
+      <li><strong>Representation learning stabilizes signals.</strong> Autoencoders and variational autoencoders compress noisy measurements into modality-specific embeddings that fuse cleanly and transfer across cohorts.</li>
+      <li><strong>Task-matched architectures matter.</strong> Convolutional networks and vision Transformers handle histology and radiology. Recurrent models and Transformers capture sequence or temporal effects. Graph convolutional networks encode pathway structure.</li>
+      <li><strong>Clinical readouts are feasible.</strong> Compact feature panels derived from multi-omics enable practical assays for response prediction and toxicity monitoring, which can reduce trial-and-error prescribing.</li>
+      <li><strong>Interpretability drives adoption.</strong> Model explanations highlight metabolites, proteins, transcripts, and pathways associated with outcomes, facilitating mechanism-centric decisions and prospective testing.</li>
+      <li><strong>Evaluation must be rigorous.</strong> External validation across sites with clear calibration, sensitivity, and specificity prevents over-optimism and clarifies generalizability.</li>
+    </ul>
+  </section>
+  <!-- End of Key Findings -->
 
+  <!-- HTML Part 2 (Figure Caption → End) -->
+  <section aria-labelledby="figure2">
+    <figure>
+      <img src="m_bbaf440f2.jpeg"
+           alt="Workflow for multi-omics analysis: preprocessing and standardization, feature selection or dimensionality reduction, fusion across omics, deep learning model training for classification or regression, metric-based evaluation, and validation for clinical translation." />
+      <figcaption>
+        <em>Figure 2.</em> Workflow for integrating <strong>multi-omics</strong> data with deep learning. Steps include data cleaning and standardization, feature selection or dimensionality reduction, integration across modalities using early fusion, mid-level representation fusion, or late fusion, model development with architectures suited to the task (for example CNN, RNN or LSTM, autoencoder or VAE, graph convolutional network, Transformer), and performance assessment with accuracy, F1, AUC, and calibration metrics, followed by internal and external validation prior to clinical use. Source: Adapted from Zhang et al. (2025), Briefings in Bioinformatics.
+      </figcaption>
+    </figure>
+  </section>
 
-<h2>Study Overview</h2>
+  <section aria-labelledby="future">
+    <h1 id="future">Future Prospects in Multi-omics-Driven Oncology</h1>
 
+    <h2>Technological Advancement</h2>
+    <p>
+      Throughput in sequencing, mass spectrometry, and imaging continues to rise, while per-sample costs gradually fall. Larger, multi-center datasets support stronger generalization. Representation learning aligns modalities into shared spaces. Attention mechanisms weight each input by context. Uncertainty estimation quantifies confidence and flags out-of-distribution cases. Together these advances shorten the path from raw assay to clinical signal and make it practical to update models as platforms change.
+    </p>
 
-<p style="font-size: 1.1em; line-height: 1.6; margin-top: 1em; margin-bottom: 1em;">
+    <h2>Clinical Implementation</h2>
+    <p>
+      Translation requires standard operating procedures that are easy to audit. Pre-analytical control and harmonized protocols reduce technical drift. Versioned preprocessing and reproducible training offer traceability. Decision support embedded in the electronic health record presents clear recommendations with concise explanations. For example, a small panel of metabolomic and proteomic markers interpreted by a validated model can help select first-line therapy, identify patients likely to benefit from combination regimens, or prompt early review when toxicity risk is high.
+    </p>
 
-After sample extraction and LC–MS acquisition, feature tables were curated and normalized for multivariate analysis. Orthogonal partial least squares discriminant analysis (OPLS-DA) showed clear separation among the BS, CS, and ZS groups, indicating robust between-variety differences. Variable importance in projection and univariate tests were then combined to prioritize features for pathway annotation.
+    <h2>Expanded Applications</h2>
+    <p>
+      Beyond the core stack of genomics, transcriptomics, proteomics, and metabolomics, integration with radiomics and digital pathology adds spatial context. Single-cell and spatial transcriptomics expose intratumoral heterogeneity and microenvironmental interactions. Circulating biomarkers and immune receptor repertoires enable non-invasive monitoring. Microbiome features can complement host pathways that influence drug metabolism and inflammatory tone. These additions strengthen trial enrichment, adaptive dosing, and surveillance programs across cancer types.
+    </p>
 
-</p>
+    <h2>Conclusion</h2>
+    <p>
+      Multi-omics reframes oncology from single-marker heuristics to comprehensive models of tumor biology. Combined with deep learning, integrated datasets yield accurate predictions, biologically grounded explanations, and compact panels that fit into routine care. Continued progress will depend on harmonized cohorts, rigorous external validation, transparent documentation, and governance that addresses privacy, fairness, and model updating. With these elements in place, multi-omics can reduce diagnostic uncertainty, shorten time to effective therapy, and improve long-term outcomes.
+    </p>
+  </section>
 
+  <section aria-labelledby="citation">
+    <h2 id="citation">Citation</h2>
+    <p>
+      Zhang, J., Che, Y., Liu, R., Wang, Z., &amp; Liu, W. (2025). Deep learning-driven multi-omics analysis: enhancing cancer diagnostics and therapeutics.
+      <em>Briefings in Bioinformatics</em>, 26(4), bbaf440.
+      <a href="https://doi.org/10.1093/bib/bbaf440">https://doi.org/10.1093/bib/bbaf440</a>.
+    </p>
+  </section>
 
-<p style="font-size: 1.1em; line-height: 1.6; margin-top: 1em; margin-bottom: 1em;">
+  <section aria-labelledby="note">
+    <h2 id="note">Note</h2>
+    <p>
+      This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
+    </p>
+    <p>
+      By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
+    </p>
+  </section>
 
-Volcano plots summarized effect size and significance for each pairwise contrast, enabling rapid triage of candidates for structural assignment. Across comparisons, the team reported <strong>1,122</strong> differential metabolites overall, with <strong>423</strong>, <strong>571</strong>, and <strong>616</strong> features meeting thresholds in BS vs. CS, BS vs. ZS, and CS vs. ZS, respectively. Many discriminants mapped to amino acid biosynthesis, TCA-linked organic acids, and lipid remodeling pathways.
+  </div>
+</div>
 
-</p>
-
-
-<p style="font-size: 1.1em; line-height: 1.6; margin-top: 1em; margin-bottom: 1em;">
-
-Together, these data show that flesh color and variety track with consistent metabolite shifts that can be leveraged for nutrition-forward breeding. The results also highlight pathway nodes that may explain antioxidant capacity, texture, and processing performance.
-
-</p>
-
+</body>
+</html>
