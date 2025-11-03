@@ -1,36 +1,42 @@
 <!-- HTML Part 1 (Title → End of Key Findings) -->
 <header>
-  <h1><em>Single-Cell Transcriptomics for Clinical Insight and Therapeutic Design</em></h1>
+  <h1><em>A Practitioner’s Guide to MOPED 2.5 for Multi Omics Expression Exploration</em></h1>
 </header>
 
 <section aria-labelledby="abstract">
   <p>
-    Single-cell RNA sequencing brings clinical biology into focus by linking cell-level diversity to diagnosis, prognosis, and treatment response. This review distills how <strong>single-cell transcriptomics</strong> progresses from sample preparation to data interpretation in patients and disease models, then maps the resulting cell states to biomarkers and therapeutic hypotheses that can be tested in trials and care pathways.
+    Multi omics projects often scatter measurements across separate repositories, formats, and metadata styles, which slows discovery and weakens cross study comparisons. 
+    This scientific summary explains how the MOPED 2.5 resource brings transcript and protein expression into one consistently processed space and why this matters for hypothesis generation, validation, and reporting. 
+    We focus on choices that make spatial and temporal comparisons credible in practice, including standardized pipelines, curated metadata, and interface elements that shorten the path from query to evidence. 
+    The perspective emphasizes scale appropriate interpretation, transparent uncertainty, and clear links between expression summaries and the biological context that users care about.
   </p>
 </section>
 
 <section aria-labelledby="transforming">
-  <h2 id="transforming">From Bulk Averages to Patient-Level Cell Atlases</h2>
+  <h2 id="transforming">From Siloed Measurements to an Integrated Omics Atlas</h2>
   <p>
-    Bulk profiling blends signals across cell types, which hides rare populations and conflates infiltration with activation. Single-cell approaches resolve this heterogeneity. Conventional plate-based methods and modern droplet microfluidics capture individual cells or nuclei, barcode transcripts, and produce libraries at scale for deep sequencing. With careful tissue dissociation and preservation strategies, clinicians and researchers can profile fragile or archived specimens and match cell states to clinical features such as severity, organ involvement, and treatment exposure.
+    High throughput platforms generate large volumes of proteomic and transcriptomic data, yet much of it remains hard to compare because processing steps differ and metadata are incomplete. 
+    MOPED 2.5 tackles that gap by assembling expression summaries that have been processed with uniform methods and reviewed for basic experimental details. 
+    As a result, researchers can pivot from a protein to its paired gene record, traverse tissues and conditions, and review summarized statistics without rebuilding analysis code for each source. 
+    The platform’s design goal is simple. Condense noisy raw outputs into reproducible tables and visual summaries that retain enough detail for informed judgment while staying fast to search and easy to interpret.
   </p>
   <p>
-    Downstream analysis begins with quality control that filters low-quality cells and doublets, then proceeds through dimensionality reduction, clustering, and trajectory inference. These steps uncover maturation gradients, activation programs, and treatment-associated states. Integration across cohorts and platforms aligns shared structure while controlling batch effects. When paired with pathway analysis and receptor–ligand modeling, single-cell maps connect molecular programs to mechanisms such as inflammatory circuits, metabolic stress, epithelial repair, vascular remodeling, and adaptive immunity.
-  </p>
-  <p>
-    The clinical value emerges when cell states are distilled into compact signatures that generalize across centers. Examples include interferon-high epithelial programs in autoimmune disease, cytotoxic and exhausted T cell subsets in oncology and infection, stress-remodeled myeloid cells in acute inflammation, and metabolic rewiring in endocrine and liver disorders. These signatures can augment existing risk scores, inform patient stratification, and shape trial endpoints that are sensitive to mechanism.
+    Practical value shows up in three places. First, consistent processing reduces surprises when users compare expression across experiments. 
+    Second, curated metadata give context about how a result was produced, which is critical when results will inform a figure, a preclinical plan, or a grant. 
+    Third, interface patterns like unified tabs, keyword search across fields, and compact bar charts make it feasible to explore many candidates, then focus on a handful that warrant deeper analysis.
   </p>
 </section>
 
 <section aria-labelledby="key-findings">
-  <h2 id="key-findings">Key Findings from Clinical Single-Cell Studies</h2>
+  <h2 id="key-findings">Key Findings from the MOPED 2.5 Update</h2>
   <ul>
-    <li><strong>Capture method matters.</strong> Droplet microfluidics enables large cohorts with high throughput, while plate-based capture accommodates larger cells and targeted assays; both approaches benefit from nuclei protocols that stabilize clinical specimens.</li>
-    <li><strong>Quality control drives reliability.</strong> Filtering by gene counts, mitochondrial fraction, and doublet likelihood reduces noise and prevents spurious clusters that would mislead interpretation.</li>
-    <li><strong>Dimensionality reduction and clustering reveal disease programs.</strong> Principal components, nearest-neighbor graphs, and visualization methods separate inflammation, stress, developmental stage, and therapy exposure into distinct cell states.</li>
-    <li><strong>Trajectory inference connects snapshots to biology.</strong> Pseudotime and lineage tools reconstruct maturation, activation, and fate decisions that underlie progression, relapse, or recovery.</li>
-    <li><strong>Integration turns data into signatures.</strong> Cross-dataset alignment and pathway scoring produce compact panels that travel across platforms and sites, enabling external validation and clinical calibration.</li>
-    <li><strong>Translational impact is expanding.</strong> Single-cell signatures support biomarker discovery, pharmacodynamic readouts, adverse-event mapping, and rational combination therapy design across respiratory, metabolic, cardiovascular, autoimmune, neurodegenerative, and cancer indications.</li>
+    <li><strong>Integrated scope.</strong> The resource now hosts both protein absolute and relative expression together with gene level relative expression, enabling multi omics cross checks within one view.</li>
+    <li><strong>Scale and coverage.</strong> Expression summaries span millions of records drawn from hundreds of large studies across human, mouse, worm, and yeast, with many tissues and conditions represented.</li>
+    <li><strong>Consistent pipelines.</strong> Transcript arrays are reprocessed with a unified statistical workflow, while proteomics inputs pass through a shared identification and quantification pipeline.</li>
+    <li><strong>Actionable statistics.</strong> Each comparative experiment presents ratios with p values and false discovery rates, which supports ranking and thresholding without reanalysis.</li>
+    <li><strong>Rich metadata.</strong> Experiment pages use a structured checklist that covers design, instrumentation, sample prep, and analysis steps to aid reproducibility and review.</li>
+    <li><strong>Explorable interface.</strong> Users search by gene symbol, protein ID, tissue, condition, localization, or experiment and can pivot to visual summaries to spot patterns quickly.</li>
+    <li><strong>Pathway context.</strong> Gene and protein pages connect expression summaries to pathway and chromosome information, which helps link signals to mechanisms.</li>
   </ul>
 </section>
 <!-- End of Key Findings -->
@@ -39,50 +45,81 @@
 <section aria-labelledby="figure1">
   <figure>
     <figcaption>
-      <em>Figure 1.</em> Overview of single-cell RNA sequencing technologies used in clinical studies. Conventional approaches isolate cells by pipetting, FACS, or laser microdissection, while microfluidic droplet systems encapsulate single cells or nuclei with barcoded beads to scale capture and library construction. The workflow runs from dissociation to barcoding, reverse transcription, cDNA amplification, and sequencing, with options for three prime biased or full-length libraries that trade depth for isoform detail. Source: Adapted from Nadukkandy et al. (2025), <em>Clinical and Translational Medicine</em>.
+      <em>Figure 1.</em> Search and results flow in MOPED. Users choose the appropriate tab for protein absolute expression, protein relative expression, or gene relative expression. 
+      Basic and advanced forms allow queries by identifiers, tissues, conditions, localization, and experiment. 
+      Results display sortable tables with expression statistics. Relative expression views present ratio, p value, and false discovery rate so that users can prioritize candidates. 
+      The same pattern applies across proteins and genes, which simplifies navigation from one omics layer to another. Source: Adapted from Montague et al. (2014), OMICS.
     </figcaption>
   </figure>
 </section>
 
 <section aria-labelledby="future">
-  <h1 id="future">Clinical Horizons for Single-Cell Transcriptomics</h1>
+  <h1 id="future">Making the Most of an Integrated Omics Resource</h1>
 
-  <h2>Data Quality, Analysis, and Integration</h2>
+  <h2>Data Sources and Processing in MOPED 2.5</h2>
   <p>
-    Clinical use begins with pre-analytical control. Tissue handling, enzymatic dissociation, and nuclei versus whole-cell capture are tuned to preserve true biology and minimize stress artifacts. Quality control gates remove low-complexity libraries and likely doublets. Principal component analysis defines informative structure, followed by graph-based clustering to obtain cell identities. Visualization tools such as t-SNE and related nonlinear embeddings help inspect cluster separation, while trajectory methods reveal transitional states that link progenitors and mature effectors. Integration approaches align datasets across batches, platforms, or centers, and joint modeling with spatial or proteomic layers helps resolve ambiguous boundaries between phenotypes. These steps turn raw counts into stable, interpretable features that can be tracked across studies and timepoints within a trial.</p>
+    MOPED aggregates expression summaries from a broad set of studies and organisms, then standardizes both content and presentation so that comparisons are meaningful. 
+    The update expands the scale to millions of expression records derived from more than two hundred fifty experiments and nearly two hundred tissues across multiple species. 
+    On the transcript side, public microarray experiments are reviewed and reanalyzed with a single workflow that estimates relative expression between conditions. 
+    Estimates are filtered to the primary organism for each study, which avoids cross species leakage and keeps gene level attribution clear. 
+    On the protein side, MOPED integrates absolute and relative measurements that were processed with a consistent pipeline for peptide identification and protein inference. 
+    Absolute expression is summarized in multiple useful units such as parts per million, mass per volume, and molar concentration, while relative expression captures fold changes with standard error control.
+  </p>
   <p>
-    Interpretation layers the statistics onto biology. Differential expression and pathway analysis highlight interferon signaling, chemokine axes, antigen presentation, oxidative stress, and metabolic shifts such as glycolysis versus oxidative phosphorylation. Receptor–ligand inference maps potential cell–cell communication between epithelium, endothelium, fibroblasts, innate immune cells, and lymphocytes. Together, these analyses connect single-cell states to mechanisms and suggest tests that can confirm causality using orthogonal assays or functional models.</p>
+    Sources feeding the proteomics layer include community databases that collect identified spectra and abundance calls, as well as submissions from collaborators. 
+    The use of a common analysis environment for proteomic inputs yields consistent estimates of concentration and relative change across experiments, which improves cross study interpretability. 
+    For comparative experiments, the interface surfaces ratios alongside p values and false discovery rates so that users can assess magnitude and statistical strength in one glance. 
+    This consistent presentation of transcript and protein results within one site makes it easier to connect mRNA shifts with corresponding protein trends or disconnects that could be biologically meaningful.
+  </p>
 
-  <h2>Disease Applications and Biomarker Design</h2>
+  <h2>Metadata, Curation, and Reproducibility</h2>
   <p>
-    In respiratory disease, single-cell maps separate epithelial secretory states, ciliary repair programs, and infiltrating immune populations, clarifying endotypes that respond differently to steroids or biologics. In metabolic disorders, adipose and hepatic atlases reveal progenitor subsets and immune remodeling that correlate with insulin resistance and fibrosis. Cardiovascular studies link vascular smooth muscle and endothelial state transitions to remodeling under pressure or hypoxia, while immune atlases describe inflammatory and resolving macrophage programs. Autoimmune studies identify interferon-responsive epithelial cells and clonally expanded T and B cell subsets, enabling composite scores that track activity and treatment response. Oncology efforts couple tumor and immune states to therapy outcomes, using single-cell readouts to monitor pharmacodynamics, uncover resistant populations, and support adaptive trial designs.</p>
+    Expression numbers are only as useful as the context that explains how they were produced. 
+    MOPED addresses this with experiment summary pages structured around a practical checklist that records design choices, instrument settings, sample preparation, processing steps, and analysis methods. 
+    The goal is to make comparisons honest and to speed up external validation by giving readers a compact but complete view of what happened to the data. 
+    Manual curation aligns source metadata with the checklist fields where possible and flags key details that affect interpretation. 
+    The resulting provenance trail supports fair comparisons between studies, helps reviewers verify reproducibility, and enables teams to document assumptions when they incorporate MOPED results into a figure, a report, or a model.
+  </p>
   <p>
-    Translational biomarker panels typically compress hundreds of single-cell features into a manageable set of genes or proteins that reproduce the signal in independent cohorts. When calibrated with clinical endpoints, these panels can be used for stratification, early response assessment, and go or no-go decisions in development. The same signatures can inform safety by flagging cell states associated with toxicity in tissues such as liver, heart, or skin.</p>
+    This emphasis on metadata also aids integration across omics layers. 
+    When gene and protein summaries include uniform descriptors for organism, tissue, condition, localization, and experiment, cross referencing is straightforward and less prone to error. 
+    Researchers can filter results to the same tissue and condition set, then examine whether protein and transcript changes align as expected from regulation and turnover. 
+    Where signals diverge, the metadata often point to plausible technical or biological explanations, such as differences in sample handling, platform sensitivity, or post translational regulation.
+  </p>
 
-  <h2>Clinical Implementation and Future Directions</h2>
+  <h2>Interface and Visualization for Discovery</h2>
   <p>
-    Implementation requires standard operating procedures that control pre-analytics and library construction, plus transparent computational pipelines with versioned parameters and documented thresholds. Single-nucleus protocols make archived samples practical, which broadens inclusion and accelerates accrual. Cost and throughput are improving with combinatorial indexing and microwell strategies, while spatial and multi-omic extensions connect transcription to chromatin, genotype, and microanatomy. Web tools and user-friendly interfaces lower the barrier for clinicians, although bioinformatic support remains essential for rigorous quality control and integration. Looking forward, single-cell readouts will be embedded into trial workflows as pharmacodynamic endpoints and mechanistic safety monitors, while machine learning over large harmonized datasets will refine signatures that predict benefit and risk at the individual patient level.</p>
+    The MOPED interface adopts a clean pattern. Three tabs separate protein absolute expression, protein relative expression, and gene relative expression. 
+    Each tab accepts simple or advanced queries that search across identifiers and biological context fields. 
+    Under the hood, full text indexing supports fast lookups by gene symbol, protein ID, tissue, condition, localization, or experiment. 
+    Results appear in tables with default columns tailored to each tab, with an expanded view that reveals additional fields where needed for deeper inspection.
+  </p>
+  <p>
+    Visualizations complement the tables. Bar charts summarize relative expression across tissues or conditions, which makes it easy to spot outliers and consistent shifts. 
+    Expression matrices align a target gene or protein with neighboring entries along the chromosome to reveal local patterns. 
+    For protein absolute expression, a chord style view provides a quick sense of how tissues, conditions, and localization relate for a selected set. 
+    Gene and protein detail pages gather background annotation, chromosome mapping, and pathway links to help users connect expression changes to mechanisms. 
+    Taken together, these features shorten the time from a broad search to a small set of candidates that justify bench experiments or model driven follow up.
+  </p>
 
   <h2>Conclusion</h2>
   <p>
-    Single-cell transcriptomics reframes clinical biology from averaged signals to actionable cell states. With disciplined sampling, robust analysis, and validated signatures, these data can guide patient selection, dose and schedule, and rational combinations. As platforms mature and integration with spatial, proteomic, and chromatin modalities grows, single-cell readouts will help bridge discovery and practice by tying mechanism to measurable benefit in diverse patient populations.
+    The value of MOPED 2.5 is not simply that it stores more data. 
+    Its utility comes from consistent processing, transparent metadata, and an interface that respects how researchers work. 
+    By unifying transcript and protein summaries across organisms, tissues, and conditions, the resource helps teams build stable shortlists, design validation experiments, and assemble figures with confidence. 
+    When used with clear definitions of scope and careful attention to assumptions, an integrated multi omics atlas like MOPED can accelerate discovery and improve the quality of decisions that depend on expression evidence.
   </p>
 </section>
 
 <section aria-labelledby="citation">
   <h2 id="citation">Citation</h2>
   <p>
-    Nadukkandy, A. S., Kalaiselvan, S., Lin, L., &amp; Luo, Y. (2025). Clinical application of single-cell RNA sequencing in disease and therapy.
-    <em>Clinical and Translational Medicine</em>, 15(11), e70512. DOI: 10.1002/ctm2.70512.
+    Montague, E., Stanberry, L., Higdon, R., Janko, I., Lee, E., Anderson, N., Choiniere, J., Stewart, E., Yandl, G., Broomall, W., Kolker, N., & Kolker, E. (2014). MOPED 2.5--an integrated multi-omics resource: multi-omics profiling expression database now includes transcriptomics data. Omics : a journal of integrative biology, 18(6), 335–343. https://doi.org/10.1089/omi.2014.0061.
   </p>
 </section>
 
 <section aria-labelledby="note">
   <h2 id="note">Note</h2>
-  <p>
-    This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
-  </p>
-  <p>
-    By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
-  </p>
+  <p> This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article. </p>
+  <p> By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis </p>
 </section>
