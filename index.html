@@ -1,42 +1,42 @@
 <!-- HTML Part 1 (Title → End of Key Findings) -->
 <header>
-  <h1><em>A Practitioner’s Guide to MOPED 2.5 for Multi Omics Expression Exploration</em></h1>
+  <h1><em>Integrated Multi-omics and Wearables for Precision Health</em></h1>
 </header>
 
 <section aria-labelledby="abstract">
   <p>
-    Multi omics projects often scatter measurements across separate repositories, formats, and metadata styles, which slows discovery and weakens cross study comparisons. 
-    This scientific summary explains how the MOPED 2.5 resource brings transcript and protein expression into one consistently processed space and why this matters for hypothesis generation, validation, and reporting. 
-    We focus on choices that make spatial and temporal comparisons credible in practice, including standardized pipelines, curated metadata, and interface elements that shorten the path from query to evidence. 
-    The perspective emphasizes scale appropriate interpretation, transparent uncertainty, and clear links between expression summaries and the biological context that users care about.
+    Precision health aims to predict, prevent, and treat disease by tracking biology in context. This review distills how
+    <strong>multi-omics</strong> profiling, combined with continuous physiological monitoring, exposes coordinated shifts in genes, transcripts,
+    proteins, lipids, metabolites, and physiology as people move between health and disease. It also explains why integrating data across
+    layers produces stronger signals than any single assay, and what is needed to translate these gains into routine care.
   </p>
 </section>
 
 <section aria-labelledby="transforming">
-  <h2 id="transforming">From Siloed Measurements to an Integrated Omics Atlas</h2>
+  <h2 id="transforming">Why Multi-omics Changes Clinical Insight</h2>
   <p>
-    High throughput platforms generate large volumes of proteomic and transcriptomic data, yet much of it remains hard to compare because processing steps differ and metadata are incomplete. 
-    MOPED 2.5 tackles that gap by assembling expression summaries that have been processed with uniform methods and reviewed for basic experimental details. 
-    As a result, researchers can pivot from a protein to its paired gene record, traverse tissues and conditions, and review summarized statistics without rebuilding analysis code for each source. 
-    The platform’s design goal is simple. Condense noisy raw outputs into reproducible tables and visual summaries that retain enough detail for informed judgment while staying fast to search and easy to interpret.
+    Single assays capture narrow slices of biology and often yield correlations that are hard to act on. Joint analysis across genomics,
+    epigenomics, transcriptomics, proteomics, metabolomics, and lipidomics reveals causal pathways, links molecular changes to measurable
+    phenotypes, and supports earlier intervention. Longitudinal sampling increases power by showing how signals co-vary through events like
+    infection, weight gain, exercise, vaccination, and pregnancy.
   </p>
   <p>
-    Practical value shows up in three places. First, consistent processing reduces surprises when users compare expression across experiments. 
-    Second, curated metadata give context about how a result was produced, which is critical when results will inform a figure, a preclinical plan, or a grant. 
-    Third, interface patterns like unified tabs, keyword search across fields, and compact bar charts make it feasible to explore many candidates, then focus on a handful that warrant deeper analysis.
+    Practical toolkits now include long-read sequencing, RNA sequencing, data independent acquisition proteomics, high throughput lipidomics
+    and metabolomics, and consumer wearables that measure heart rate, activity, temperature, sleep, and oxygen saturation. Together these
+    inputs enable deep phenotyping, where the same person is profiled many times to map transitions and personalize risk and therapy.
   </p>
 </section>
 
 <section aria-labelledby="key-findings">
-  <h2 id="key-findings">Key Findings from the MOPED 2.5 Update</h2>
+  <h2 id="key-findings">Key Findings from Multi-omics and Wearables Research</h2>
   <ul>
-    <li><strong>Integrated scope.</strong> The resource now hosts both protein absolute and relative expression together with gene level relative expression, enabling multi omics cross checks within one view.</li>
-    <li><strong>Scale and coverage.</strong> Expression summaries span millions of records drawn from hundreds of large studies across human, mouse, worm, and yeast, with many tissues and conditions represented.</li>
-    <li><strong>Consistent pipelines.</strong> Transcript arrays are reprocessed with a unified statistical workflow, while proteomics inputs pass through a shared identification and quantification pipeline.</li>
-    <li><strong>Actionable statistics.</strong> Each comparative experiment presents ratios with p values and false discovery rates, which supports ranking and thresholding without reanalysis.</li>
-    <li><strong>Rich metadata.</strong> Experiment pages use a structured checklist that covers design, instrumentation, sample prep, and analysis steps to aid reproducibility and review.</li>
-    <li><strong>Explorable interface.</strong> Users search by gene symbol, protein ID, tissue, condition, localization, or experiment and can pivot to visual summaries to spot patterns quickly.</li>
-    <li><strong>Pathway context.</strong> Gene and protein pages connect expression summaries to pathway and chromosome information, which helps link signals to mechanisms.</li>
+    <li><strong>Integration increases signal quality.</strong> Combining omics layers reduces modality specific noise and clarifies drivers of phenotype compared to single assays.</li>
+    <li><strong>Time series matter.</strong> Repeated measurements expose early molecular shifts that precede clinical change and quantify recovery after perturbations.</li>
+    <li><strong>Personalized signatures emerge.</strong> Individuals show stable, person specific patterns that can function as personalized biomarkers for monitoring.</li>
+    <li><strong>Clinical use cases are broad.</strong> Cardiometabolic risk, cancer subtyping, infectious disease trajectories, pregnancy timing, and transplant surveillance all benefit.</li>
+    <li><strong>Wearables add context.</strong> Continuous physiological data complements blood based omics and improves detection of inflammation and cardiometabolic status.</li>
+    <li><strong>Repositories and standards accelerate work.</strong> Community resources and large consortia provide reference maps and population scale cohorts for benchmarking.</li>
+    <li><strong>Implementation requires governance.</strong> Cost, standardization, privacy, and training are bottlenecks that must be addressed for clinical adoption.</li>
   </ul>
 </section>
 <!-- End of Key Findings -->
@@ -45,76 +45,115 @@
 <section aria-labelledby="figure1">
   <figure>
     <figcaption>
-      <em>Figure 1.</em> Search and results flow in MOPED. Users choose the appropriate tab for protein absolute expression, protein relative expression, or gene relative expression. 
-      Basic and advanced forms allow queries by identifiers, tissues, conditions, localization, and experiment. 
-      Results display sortable tables with expression statistics. Relative expression views present ratio, p value, and false discovery rate so that users can prioritize candidates. 
-      The same pattern applies across proteins and genes, which simplifies navigation from one omics layer to another. Source: Adapted from Montague et al. (2014), OMICS.
+      <em>Figure 1.</em> Milestones that enabled precision health, including growth from Sanger sequencing to next generation and long read genomics,
+      emergence of modern epigenomics and RNA sequencing, advances in liquid chromatography mass spectrometry for proteomics and lipidomics,
+      expansion of metabolomics, and introduction of consumer wearables for continuous physiology. Source: Adapted from Babu and Snyder (2023), Molecular and Cellular Proteomics.
     </figcaption>
   </figure>
 </section>
 
-<section aria-labelledby="future">
-  <h1 id="future">Making the Most of an Integrated Omics Resource</h1>
+<section aria-labelledby="tech">
+  <h1 id="tech">From Technologies to Integrated Readouts</h1>
 
-  <h2>Data Sources and Processing in MOPED 2.5</h2>
+  <h2>Core Modalities and What Each Adds</h2>
   <p>
-    MOPED aggregates expression summaries from a broad set of studies and organisms, then standardizes both content and presentation so that comparisons are meaningful. 
-    The update expands the scale to millions of expression records derived from more than two hundred fifty experiments and nearly two hundred tissues across multiple species. 
-    On the transcript side, public microarray experiments are reviewed and reanalyzed with a single workflow that estimates relative expression between conditions. 
-    Estimates are filtered to the primary organism for each study, which avoids cross species leakage and keeps gene level attribution clear. 
-    On the protein side, MOPED integrates absolute and relative measurements that were processed with a consistent pipeline for peptide identification and protein inference. 
-    Absolute expression is summarized in multiple useful units such as parts per million, mass per volume, and molar concentration, while relative expression captures fold changes with standard error control.
-  </p>
-  <p>
-    Sources feeding the proteomics layer include community databases that collect identified spectra and abundance calls, as well as submissions from collaborators. 
-    The use of a common analysis environment for proteomic inputs yields consistent estimates of concentration and relative change across experiments, which improves cross study interpretability. 
-    For comparative experiments, the interface surfaces ratios alongside p values and false discovery rates so that users can assess magnitude and statistical strength in one glance. 
-    This consistent presentation of transcript and protein results within one site makes it easier to connect mRNA shifts with corresponding protein trends or disconnects that could be biologically meaningful.
+    <strong>Genomics</strong> establishes inherited risk and tumor mutations with fast, inexpensive sequencing. Long read platforms improve detection of
+    structural variants and repetitive regions, and can compress turnaround time for urgent diagnosis. <strong>Epigenomics</strong> catalogs methylation and
+    chromatin marks that link environment to gene control, clarifying why risk loci located in noncoding regions affect expression. <strong>Transcriptomics</strong>
+    moves beyond gene lists to isoforms and cell state. <strong>Proteomics</strong> reports the functional effectors with post translational modifications and
+    pathway activity. <strong>Lipidomics and metabolomics</strong> capture pathway flux and the combined influence of genetics, microbiome, and exposure on
+    physiology. <strong>Wearables</strong> provide continuous context that aligns symptoms, inflammation, sleep, and exertion with molecular changes.
   </p>
 
-  <h2>Metadata, Curation, and Reproducibility</h2>
+  <h2>Why Integration Outperforms Single Layers</h2>
   <p>
-    Expression numbers are only as useful as the context that explains how they were produced. 
-    MOPED addresses this with experiment summary pages structured around a practical checklist that records design choices, instrument settings, sample preparation, processing steps, and analysis methods. 
-    The goal is to make comparisons honest and to speed up external validation by giving readers a compact but complete view of what happened to the data. 
-    Manual curation aligns source metadata with the checklist fields where possible and flags key details that affect interpretation. 
-    The resulting provenance trail supports fair comparisons between studies, helps reviewers verify reproducibility, and enables teams to document assumptions when they incorporate MOPED results into a figure, a report, or a model.
-  </p>
-  <p>
-    This emphasis on metadata also aids integration across omics layers. 
-    When gene and protein summaries include uniform descriptors for organism, tissue, condition, localization, and experiment, cross referencing is straightforward and less prone to error. 
-    Researchers can filter results to the same tissue and condition set, then examine whether protein and transcript changes align as expected from regulation and turnover. 
-    Where signals diverge, the metadata often point to plausible technical or biological explanations, such as differences in sample handling, platform sensitivity, or post translational regulation.
+    Joint modeling resolves contradictions that arise when one layer is measured in isolation. For example, genetic risk can be filtered through
+    RNA and protein abundance to highlight expressed pathways, while metabolite and lipid changes validate pathway activation. Longitudinal
+    designs convert static snapshots into trajectories, reveal early warning signals before clinical thresholds are crossed, and separate transient
+    perturbations from persistent disease transitions. In practice, studies show that fusion of multiple layers improves classification, prognosis,
+    and therapy selection across conditions.
   </p>
 
-  <h2>Interface and Visualization for Discovery</h2>
+  <h2>Analysis Patterns that Generalize</h2>
   <p>
-    The MOPED interface adopts a clean pattern. Three tabs separate protein absolute expression, protein relative expression, and gene relative expression. 
-    Each tab accepts simple or advanced queries that search across identifiers and biological context fields. 
-    Under the hood, full text indexing supports fast lookups by gene symbol, protein ID, tissue, condition, localization, or experiment. 
-    Results appear in tables with default columns tailored to each tab, with an expanded view that reveals additional fields where needed for deeper inspection.
+    A disciplined analysis flow makes results robust. Typical steps include rigorous quality control, batch correction, dimensionality reduction,
+    and selection of an integration strategy matched to the goal. Early fusion combines features before modeling, representation fusion aligns
+    modality specific embeddings, and late fusion blends model outputs. Supervised learning supports prediction of outcomes such as survival
+    or treatment response, while unsupervised learning reveals subtypes and latent axes of variation. Interpretation through pathway enrichment
+    and network analysis links model signals back to mechanisms, which enables prospective testing and assay minimization for clinics.
   </p>
+</section>
+
+<section aria-labelledby="apps">
+  <h1 id="apps">Clinical Applications in Precision Health</h1>
+
+  <h2>Metabolic and Cardiovascular Health</h2>
   <p>
-    Visualizations complement the tables. Bar charts summarize relative expression across tissues or conditions, which makes it easy to spot outliers and consistent shifts. 
-    Expression matrices align a target gene or protein with neighboring entries along the chromosome to reveal local patterns. 
-    For protein absolute expression, a chord style view provides a quick sense of how tissues, conditions, and localization relate for a selected set. 
-    Gene and protein detail pages gather background annotation, chromosome mapping, and pathway links to help users connect expression changes to mechanisms. 
-    Taken together, these features shorten the time from a broad search to a small set of candidates that justify bench experiments or model driven follow up.
+    Deep longitudinal profiling around weight gain and loss detects strong inflammatory and hypertrophic signatures in blood that track with
+    insulin resistance. Individuals display personalized molecular baselines and distinct responses to exercise and diet. Integrated models using
+    omics and wearable data can estimate insulin sensitivity and identify early molecular warnings before glucose control worsens. These
+    patterns support personalized nutrition, targeted lifestyle coaching, and earlier therapy escalation for people at risk of type 2 diabetes.
   </p>
 
-  <h2>Conclusion</h2>
+  <h2>Cancer, Infection, and Transplantation</h2>
   <p>
-    The value of MOPED 2.5 is not simply that it stores more data. 
-    Its utility comes from consistent processing, transparent metadata, and an interface that respects how researchers work. 
-    By unifying transcript and protein summaries across organisms, tissues, and conditions, the resource helps teams build stable shortlists, design validation experiments, and assemble figures with confidence. 
-    When used with clear definitions of scope and careful attention to assumptions, an integrated multi omics atlas like MOPED can accelerate discovery and improve the quality of decisions that depend on expression evidence.
+    In oncology, multi omics stratifies tumors into molecular subgroups and links copy number, methylation, chromatin accessibility, RNA, and
+    protein levels to prognosis and candidate targets. In infectious disease, integrated profiling of blood cells and plasma captures immune
+    programs that distinguish mild from moderate trajectories and identifies markers that predict severe outcomes. During transplant care,
+    combined microbiome, metabolome, lipidome, and cell composition from airway samples can forecast lung function changes, enabling
+    closer monitoring and tailored immunosuppression.
+  </p>
+
+  <h2>Pregnancy and Aging</h2>
+  <p>
+    In pregnancy, multi omics time courses reveal a coordinated shift two to four weeks before labor with hormone surges and immune
+    rebalancing, which motivates development of blood based timing tests. Across the lifespan, longitudinal profiling uncovers different
+    aging patterns, or ageotypes, that affect metabolism and immune tone. These observations suggest that precision prevention and
+    monitoring can be tuned to a person’s molecular aging trajectory rather than chronological age alone.
+  </p>
+</section>
+
+<section aria-labelledby="ops">
+  <h1 id="ops">From Feasibility to Routine Care</h1>
+
+  <h2>Data, Infrastructure, and Standards</h2>
+  <p>
+    Translation requires standard operating procedures for sample handling, versioned preprocessing, and reproducible training. Large
+    repositories and consortia provide reference maps across tissues and diseases that are invaluable for benchmarking. Clinical deployment
+    depends on secure platforms that can manage terabyte scale data, protect privacy, and integrate with electronic records while allowing
+    controlled use for discovery.
+  </p>
+
+  <h2>Governance, Equity, and Workforce</h2>
+  <p>
+    Clear policies are needed for consent, data ownership, and reuse. Safeguards should prevent discrimination based on molecular risk while
+    still enabling action on findings that change care. Adoption also depends on clinician training to interpret results and on equitable access
+    so that diverse populations are represented in discovery and benefit from precision tools.
+  </p>
+
+  <h2>What Success Looks Like</h2>
+  <p>
+    In routine care, individuals would have periodic blood based multi omics panels, continuous wearable monitoring, and context from
+    environment or microbiome when relevant. Models would translate these inputs into simple readouts like risk scores, alerts for acute
+    events, and therapy recommendations supported by compact marker panels. Over time, learning health systems would refine models and
+    reduce costs while maintaining transparency and performance across sites.
+  </p>
+</section>
+
+<section aria-labelledby="conclusion">
+  <h2 id="conclusion">Conclusion</h2>
+  <p>
+    Multi omics reframes health from a single marker view to a coordinated systems perspective. When combined with longitudinal sampling
+    and wearable context, it uncovers early warnings, clarifies heterogeneity, and supports targeted prevention and treatment. The remaining
+    barriers are solvable with standards, infrastructure, and governance that protect people while enabling responsible analysis. With these
+    elements in place, precision health can move from high profile pilots to dependable clinical practice.
   </p>
 </section>
 
 <section aria-labelledby="citation">
   <h2 id="citation">Citation</h2>
   <p>
-    Montague, E., Stanberry, L., Higdon, R., Janko, I., Lee, E., Anderson, N., Choiniere, J., Stewart, E., Yandl, G., Broomall, W., Kolker, N., & Kolker, E. (2014). MOPED 2.5--an integrated multi-omics resource: multi-omics profiling expression database now includes transcriptomics data. Omics : a journal of integrative biology, 18(6), 335–343. https://doi.org/10.1089/omi.2014.0061.
+    Babu, M., &amp; Snyder, M. (2023). Multi-Omics Profiling for Health. Molecular &amp; cellular proteomics : MCP, 22(6), 100561. https://doi.org/10.1016/j.mcpro.2023.100561.
   </p>
 </section>
 
