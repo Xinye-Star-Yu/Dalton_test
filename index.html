@@ -1,92 +1,114 @@
 <!-- HTML Part 1 (Title → End of Key Findings) -->
 <header>
-<h1><em>Multiomics, Artificial Intelligence, and Precision Medicine in Perinatology</em></h1>
+  <h1><em>AutoBA: An AI Agent for Fully Automated Multi-Omic Analyses</em></h1>
 </header>
 
 <section aria-labelledby="abstract">
-<p>
-Perinatology faces a recurring problem: many complications become clinically obvious only after key biological changes have already occurred. This review summarizes how <strong>multi-omics</strong> profiling, paired with artificial intelligence and machine learning, can shift care toward earlier prediction and more individualized prevention in pregnancy and neonatal intensive care. By integrating molecular layers with routine clinical signals, computational models can identify risk before overt symptoms, propose interpretable biomarker panels, and support decisions about monitoring, nutrition, and timing of interventions.
-</p>
+  <p>
+    Multi-omic studies often stall because pipelines are long, tool chains are fragile, and many steps require hands-on debugging.
+    Zhou and colleagues describe <strong>Automated Bioinformatics Analysis (AutoBA)</strong>, an AI agent that turns three user inputs into a complete
+    workflow. Given a data location, a short dataset description, and an end goal, AutoBA plans the analysis, generates code, executes it, and returns
+    results that are easier to interpret and reproduce.
+  </p>
 </section>
 
 <section aria-labelledby="transforming">
-<h2 id="transforming">Transforming Perinatal Care with AI-based Multiomics</h2>
-<p>
-Modern “omics” technologies can quantify genomes, epigenomes, transcriptomes, proteomes, metabolomes, and microbiomes with increasing speed and falling cost. In the perinatal setting, these measurements capture both inherited susceptibility and dynamic adaptation to pregnancy, birth, and early life. A single modality often reveals associations, but it rarely explains causality or the interacting pathways that drive heterogeneous outcomes in mothers and infants. <strong>Multi-omics</strong> integration addresses this limitation by combining complementary biological layers to build a more holistic view of disease pathophysiology.
-</p>
-<p>
-Artificial intelligence provides the analytical infrastructure to learn from these high-dimensional data. Supervised learning links omics features to outcomes such as preeclampsia, preterm birth, or neonatal complications, while unsupervised approaches can discover data-driven clusters that redefine broad clinical labels. Practical model development relies on careful validation and transparent metrics. The review highlights common evaluation approaches such as AUROC for discrimination and calibration-oriented checks that help determine whether predictions are clinically reliable rather than merely statistically impressive.
-</p>
-<p>
-The authors frame these advances within an evolution of medical practice from intuition, to evidence, to algorithm-supported precision care. In perinatology, the opportunity is especially compelling because critical windows for growth, immune maturation, and epigenetic programming are short. A disciplined pipeline that includes standardized sampling, robust preprocessing, and fairness-aware validation can turn integrated omics and clinical data into actionable risk stratification that supports earlier, safer, and more personalized interventions.
-</p>
+  <h2 id="transforming">Turning Bioinformatics Workflows into a Self-Running Agent</h2>
+
+  <p>
+    Bioinformatics pipelines differ across assays and labs, but many share a common pattern: data preparation, a sequence of specialized tools, and a final
+    output such as differential features, pathway signals, or predictive models. The paper argues that the main burden is coordination of many steps, each
+    with its own dependencies and failure modes.
+  </p>
+
+  <p>
+    AutoBA follows a three-stage loop that mirrors expert practice. It first writes an explicit plan that breaks the goal into sub-tasks and selects tools.
+    It then generates runnable scripts that install dependencies and execute each sub-task. Finally, it runs the workflow, collects outputs, and proceeds to
+    downstream steps until the objective is satisfied.
+  </p>
+
+  <p>
+    Reliability comes from two internal supports. A memory mechanism summarizes completed actions so later steps stay consistent with earlier decisions.
+    An automated code repair loop uses error messages to revise scripts and retry execution. The system can use online language models for convenience or
+    local models for privacy-focused deployment.
+  </p>
 </section>
 
 <section aria-labelledby="key-findings">
-<h2 id="key-findings">Key Findings from Multi-omics and AI in Perinatology</h2>
-<ul>
-<li><strong>Multi-omics enables a systems-level view.</strong> Combining molecular layers can reveal interacting pathways that single-omic studies often miss, improving mechanistic insight.</li>
-<li><strong>Prediction can occur before symptoms.</strong> Integrating omics with clinical variables supports models that detect risk earlier, enabling preventive strategies in pregnancy and the NICU.</li>
-<li><strong>Integration timing matters.</strong> Early, intermediate, and late integration strategies trade off simplicity, the ability to capture cross-omic interactions, and robustness to heterogeneity.</li>
-<li><strong>Clinically relevant use cases are emerging.</strong> Applications span pregnancy complications, timing of labor, and neonatal disorders where current definitions are broad or unstable.</li>
-<li><strong>Ethics and governance are central.</strong> Fairness, privacy, and explainability must be addressed to avoid biased deployment and to maintain clinician and family trust.</li>
-</ul>
+  <h2 id="key-findings">Key Findings from AutoBA</h2>
+  <ul>
+    <li><strong>Low-friction interface.</strong> Three user inputs can initiate planning, code generation, execution, and reporting.</li>
+    <li><strong>Structured planning.</strong> The agent produces step-by-step protocols that connect objectives to concrete tools and files.</li>
+    <li><strong>End-to-end automation.</strong> AutoBA handles setup, runs programs, and continues into downstream analyses rather than stopping at scripts.</li>
+    <li><strong>Error-aware repair.</strong> Iterative code fixing improves completion when pipelines fail due to dependencies or formatting.</li>
+    <li><strong>Flexible deployment.</strong> Online or local language model backends support different privacy and compute constraints.</li>
+    <li><strong>Practical benchmarking.</strong> Diverse evaluations show higher completion than baseline agent approaches.</li>
+  </ul>
 </section>
 <!-- End of Key Findings -->
-
 <!-- HTML Part 2 (Figure Caption → End) -->
 <section aria-labelledby="figure1">
-<figure>
-<figcaption>
-<em>Figure 1.</em> Conceptual progression from intuition-based medicine to evidence-based medicine and then to precision medicine. The schematic contrasts care guided by signs and symptoms, care guided by clinical trial evidence and population statistics, and future care guided by algorithms that integrate patient phenotype with genomic and other omics data to individualize prediction and treatment. Source: Adapted from Pammi et al. (2023), Pediatric Research.
-</figcaption>
-</figure>
+  <figure>
+    <figcaption>
+      <em>Figure 1.</em> Overview of AutoBA for conventional <strong>multi-omic</strong> analysis. Users provide a data path, a short dataset description,
+      and a final goal. The agent proposes a plan, generates code, executes the workflow, and returns outputs such as figures, reports, and processed results.
+      The diagram also emphasizes interchangeable language model backends, including online and local options for privacy-sensitive use.
+      Source: Adapted from Zhou et al. (2024), Advanced Science.
+    </figcaption>
+  </figure>
 </section>
 
-<section aria-labelledby="integration">
-<h2 id="integration">How Multiomics and Machine Learning Fit Together</h2>
-<p>
-The review defines “omics” as large-scale profiling of biological systems and argues that integration is required to connect molecular change to phenotype. The authors outline three common integration timings. Early integration concatenates features across omics layers, which is straightforward but vulnerable to the curse of dimensionality when samples are limited. Intermediate integration first reduces each omics layer into a lower-noise representation, then combines these representations for downstream learning. Late integration analyzes each omics layer independently and merges predictions, which can be robust to heterogeneity but may miss cross-omic interactions. Across strategies, dimensionality reduction and careful handling of differing data types are emphasized as practical necessities for reliable model training.
-</p>
+<section aria-labelledby="workflow">
+  <h2 id="workflow">How AutoBA Orchestrates Analysis Steps</h2>
+  <p>
+    AutoBA treats analysis as a sequence of verifiable deliverables. For each sub-task it specifies expected inputs and outputs, writes code to generate
+    them, and runs the code in order. Intermediate results are summarized into memory so later steps can reuse parameters and file locations. When the goal
+    is reached, the agent produces a narrative of actions taken and a bundle of artifacts that researchers can rerun.
+  </p>
 </section>
 
-<section aria-labelledby="applications">
-<h2 id="applications">Clinical Opportunities in Pregnancy and the Neonatal Intensive Care Unit</h2>
-<p>
-In pregnancy, integrated profiling can characterize normal physiologic adaptation and identify early deviations that precede complications. Examples discussed include multi-omics approaches that predict gestational age, models that classify or predict preeclampsia using longitudinal measurements, and integrative signatures associated with preterm birth across cohorts. In neonatal intensive care, the authors highlight conditions with heterogeneous biology and imperfect definitions, including sepsis and necrotizing enterocolitis, where multi-omics and AI could help redefine subtypes, improve diagnostic precision, and support targeted prevention. The review also notes that continuous bedside monitoring generates dense physiologic data streams that can complement molecular profiles for more informative risk prediction.
-</p>
+<section aria-labelledby="evaluation">
+  <h2 id="evaluation">What the Evaluations Reveal</h2>
+  <p>
+    The authors test AutoBA on a broad set of multi-omic scenarios that reflect typical research questions, including feature discovery and integrative
+    modeling. Reviewers judge whether plans are reasonable, code is executable, and outputs match the goal. Planning quality is consistently strong, while
+    execution failures often trace to external tools. Automated code repair reduces manual intervention by turning runtime errors into targeted fixes.
+  </p>
 </section>
 
-<section aria-labelledby="ethics">
-<h2 id="ethics">Ethical, Practical, and Data Challenges</h2>
-<p>
-Translation into perinatal care requires attention to fairness, privacy, and interpretability. Models trained on narrow populations may not generalize across sex, race, ethnicity, or clinical settings, leading to inequitable performance. Privacy risks increase as multi-omics profiles and identifiers are combined, so governance and de-identification practices are essential. The review also emphasizes that many high-performing models are difficult to explain, which is problematic when predictions affect families, insurance, and high-stakes neonatal decisions. Addressing these concerns alongside reproducible workflows and external validation is presented as a prerequisite for trustworthy deployment.
-</p>
+<section aria-labelledby="deployment">
+  <h2 id="deployment">Deployment, Guardrails, and Remaining Gaps</h2>
+  <p>
+    AutoBA supports privacy-aware use by relying on dataset descriptions rather than uploading raw files, and by enabling local model deployment when needed.
+    The system incorporates safety measures such as constrained execution environments and command restrictions. Current gaps include sensitivity to tool
+    installation quirks, uneven support for niche methods, and limited guarantees about optimal parameter choices. Better tool standardization and richer
+    domain knowledge are clear directions for improving reliability.
+  </p>
 </section>
 
 <section aria-labelledby="conclusion">
-<h2 id="conclusion">Conclusion</h2>
-<p>
-Multi-omics technologies and AI methods are converging to make precision medicine more feasible in perinatology. By integrating molecular layers with clinical and physiologic data, models can move care toward earlier prediction, improved disease stratification, and individualized prevention strategies during pregnancy and neonatal life. Continued progress will depend on standardized sampling, robust integration choices that respect small cohort sizes, transparent model evaluation, and ethical safeguards that ensure privacy and fairness while maintaining interpretability for clinicians and families.
-</p>
+  <h2 id="conclusion">Conclusion</h2>
+  <p>
+    AutoBA shows how a language model agent can move from chat-based assistance to automated multi-omic analysis that plans, runs, and documents a workflow.
+    Its memory and repair mechanisms target common pain points in day-to-day bioinformatics: keeping state, handling failures, and producing reproducible
+    outputs. With broader evaluation and more standardized tooling, agent-driven automation could reduce analysis bottlenecks and make multi-omics more
+    accessible to many research teams.
+  </p>
 </section>
 
 <section aria-labelledby="citation">
-<h2 id="citation">Citation</h2>
-<p>
-Pammi, M., Aghaeepour, N., &amp; Neu, J. (2023). Multiomics, artificial intelligence, and precision medicine in perinatology. Pediatric research, 93(2), 308–315. https://doi.org/10.1038/s41390-022-02181-x.
-</p>
+  <h2 id="citation">Citation</h2>
+  <p>
+    Zhou, J., Zhang, B., Li, G., Chen, X., Li, H., Xu, X., Chen, S., He, W., Xu, C., Liu, L., &amp; Gao, X. (2024). An AI Agent for Fully Automated Multi-Omic Analyses. Advanced science (Weinheim, Baden-Wurttemberg, Germany), 11(44), e2407094. https://doi.org/10.1002/advs.202407094.
+  </p>
 </section>
 
 <section aria-labelledby="note">
-<h2 id="note">Note</h2>
-<p>
-This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
-</p>
-<p>
-By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
-</p>
+  <h2 id="note">Note</h2>
+  <p>
+    This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
+  </p>
+  <p>
+    By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
+  </p>
 </section>
-
-</body>
-</html>
