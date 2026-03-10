@@ -1,114 +1,87 @@
 <!-- HTML Part 1 (Title → End of Key Findings) -->
-<header>
-  <h1><em>AutoBA: An AI Agent for Fully Automated Multi-Omic Analyses</em></h1>
-</header>
+  <header>
+    <h1><em>How Network-based Multi-omics Integration Clarifies Disease Biology</em></h1>
+  </header>
 
-<section aria-labelledby="abstract">
-  <p>
-    Multi-omic studies often stall because pipelines are long, tool chains are fragile, and many steps require hands-on debugging.
-    Zhou and colleagues describe <strong>Automated Bioinformatics Analysis (AutoBA)</strong>, an AI agent that turns three user inputs into a complete
-    workflow. Given a data location, a short dataset description, and an end goal, AutoBA plans the analysis, generates code, executes it, and returns
-    results that are easier to interpret and reproduce.
-  </p>
-</section>
+  <section aria-labelledby="abstract">
+    <p>
+      Modern biology can measure many molecular layers at once, but the harder task is combining them into one interpretable model of disease. This review explains how <strong>network-based multi-omics</strong> analysis helps solve that problem by treating molecules and their relationships as connected systems instead of isolated feature lists. It outlines the main computational strategies, the kinds of biological questions they answer, and the practical limits that still shape the field.
+    </p>
+  </section>
 
-<section aria-labelledby="transforming">
-  <h2 id="transforming">Turning Bioinformatics Workflows into a Self-Running Agent</h2>
+  <section aria-labelledby="framework-overview">
+    <h2 id="framework-overview">Why Network-based Integration Matters in Multi-omics</h2>
+    <p>
+      Single-omics studies can uncover useful signals, but they often miss how genomic, transcriptomic, proteomic, metabolomic, and other layers influence one another. The review argues that network-based integration is powerful because it represents biological systems as connected graphs, where nodes capture molecules or samples and edges capture similarity, regulation, or interaction. This structure helps researchers move from parallel measurements toward mechanism-focused interpretation.
+    </p>
+    <p>
+      Agamah and colleagues divide the field into two broad strategies. In multi-stage analysis, each omics layer is examined first and then compared across layers. In multi-modal analysis, several layers are integrated together in one framework. The paper then emphasizes three major method families: machine learning-driven network methods, diffusion or propagation methods, and causality or network inference methods. Together, these approaches can support biomarker discovery, patient stratification, cross-layer crosstalk analysis, candidate driver prioritization, and drug-focused studies.
+    </p>
+  </section>
 
-  <p>
-    Bioinformatics pipelines differ across assays and labs, but many share a common pattern: data preparation, a sequence of specialized tools, and a final
-    output such as differential features, pathway signals, or predictive models. The paper argues that the main burden is coordination of many steps, each
-    with its own dependencies and failure modes.
-  </p>
+  <section aria-labelledby="key-findings">
+    <h2 id="key-findings">Key Findings from Network-based Multi-omics Research</h2>
+    <ul>
+      <li><strong>Networks connect biology across layers.</strong> They organize separate omics measurements into linked systems that better reflect cellular function.</li>
+      <li><strong>Two integration styles dominate.</strong> Studies either combine results after separate analyses or integrate multiple layers jointly from the outset.</li>
+      <li><strong>Three method families anchor the field.</strong> The review centers on machine learning, diffusion or propagation, and causal inference approaches.</li>
+      <li><strong>The framework supports diverse outputs.</strong> These methods can identify biomarkers, disease subtypes, subnetworks, crosstalk patterns, and candidate drivers.</li>
+      <li><strong>Method choice should follow the question.</strong> Different tools are better for clustering, ranking, signal spreading, or directional inference.</li>
+      <li><strong>Translation still depends on rigor.</strong> Heterogeneity, reproducibility, sparse data, and interpretability remain major obstacles.</li>
+    </ul>
+  </section>
+  <!-- End of Key Findings -->
 
-  <p>
-    AutoBA follows a three-stage loop that mirrors expert practice. It first writes an explicit plan that breaks the goal into sub-tasks and selects tools.
-    It then generates runnable scripts that install dependencies and execute each sub-task. Finally, it runs the workflow, collects outputs, and proceeds to
-    downstream steps until the objective is satisfied.
-  </p>
+  <!-- HTML Part 2 (Figure Caption → End) -->
+  <section aria-labelledby="figure1">
+    <figure>
+      <figcaption>
+        <em>Figure 1.</em> Overview of network-based multi-omics integration. Processed omics profiles, with optional prior biological knowledge, feed into either a multi-stage workflow or a multi-modal workflow. These can then be analyzed with machine learning, diffusion or propagation, or causal inference methods, producing layered networks that reveal within-layer interactions and cross-layer crosstalk. Source: Adapted from Agamah et al. (2022), <em>Frontiers in Molecular Biosciences</em>.
+      </figcaption>
+    </figure>
+  </section>
 
-  <p>
-    Reliability comes from two internal supports. A memory mechanism summarizes completed actions so later steps stay consistent with earlier decisions.
-    An automated code repair loop uses error messages to revise scripts and retry execution. The system can use online language models for convenience or
-    local models for privacy-focused deployment.
-  </p>
-</section>
+  <section aria-labelledby="integration-strategies">
+    <h2 id="integration-strategies">Integration Strategies</h2>
+    <p>
+      The paper presents multi-stage and multi-modal integration as the first major decision in study design. Multi-stage workflows are often easier to manage because each omics layer keeps its own preprocessing and analysis pipeline, but they can miss deeper joint structure. Multi-modal workflows better reflect interacting biology because layers are analyzed together from the start. That choice influences how features are compared, how networks are constructed, and how strongly cross-layer relationships can be detected.
+    </p>
+  </section>
 
-<section aria-labelledby="key-findings">
-  <h2 id="key-findings">Key Findings from AutoBA</h2>
-  <ul>
-    <li><strong>Low-friction interface.</strong> Three user inputs can initiate planning, code generation, execution, and reporting.</li>
-    <li><strong>Structured planning.</strong> The agent produces step-by-step protocols that connect objectives to concrete tools and files.</li>
-    <li><strong>End-to-end automation.</strong> AutoBA handles setup, runs programs, and continues into downstream analyses rather than stopping at scripts.</li>
-    <li><strong>Error-aware repair.</strong> Iterative code fixing improves completion when pipelines fail due to dependencies or formatting.</li>
-    <li><strong>Flexible deployment.</strong> Online or local language model backends support different privacy and compute constraints.</li>
-    <li><strong>Practical benchmarking.</strong> Diverse evaluations show higher completion than baseline agent approaches.</li>
-  </ul>
-</section>
-<!-- End of Key Findings -->
-<!-- HTML Part 2 (Figure Caption → End) -->
-<section aria-labelledby="figure1">
-  <figure>
-    <figcaption>
-      <em>Figure 1.</em> Overview of AutoBA for conventional <strong>multi-omic</strong> analysis. Users provide a data path, a short dataset description,
-      and a final goal. The agent proposes a plan, generates code, executes the workflow, and returns outputs such as figures, reports, and processed results.
-      The diagram also emphasizes interchangeable language model backends, including online and local options for privacy-sensitive use.
-      Source: Adapted from Zhou et al. (2024), Advanced Science.
-    </figcaption>
-  </figure>
-</section>
+  <section aria-labelledby="method-families">
+    <h2 id="method-families">Method Families</h2>
+    <p>
+      Machine learning methods are useful for clustering, classification, feature ranking, and biomarker extraction in high-dimensional data. Diffusion and propagation methods are especially helpful when the goal is to trace how disease-associated signal moves through a network and to prioritize connected genes, pathways, or subnetworks. Causal and network inference methods attempt to estimate directed or conditional relationships, making them especially relevant when researchers want to propose likely drivers rather than only correlated markers.
+    </p>
+  </section>
 
-<section aria-labelledby="workflow">
-  <h2 id="workflow">How AutoBA Orchestrates Analysis Steps</h2>
-  <p>
-    AutoBA treats analysis as a sequence of verifiable deliverables. For each sub-task it specifies expected inputs and outputs, writes code to generate
-    them, and runs the code in order. Intermediate results are summarized into memory so later steps can reuse parameters and file locations. When the goal
-    is reached, the agent produces a narrative of actions taken and a bundle of artifacts that researchers can rerun.
-  </p>
-</section>
+  <section aria-labelledby="applications-limits">
+    <h2 id="applications-limits">Applications and Limits</h2>
+    <p>
+      The review makes clear that network-based integration is useful for more than one biological task. It can be applied to crosstalk analysis, disease progression and subtype prediction, candidate driver identification, and drug discovery through heterogeneous networks that combine molecular and pharmacologic information. At the same time, the authors emphasize persistent limitations: biological heterogeneity, sparse measurements, reproducibility concerns, and difficulty in interpreting complex models. They argue that more standardized frameworks and hybrid tools will be important for future progress.
+    </p>
+  </section>
 
-<section aria-labelledby="evaluation">
-  <h2 id="evaluation">What the Evaluations Reveal</h2>
-  <p>
-    The authors test AutoBA on a broad set of multi-omic scenarios that reflect typical research questions, including feature discovery and integrative
-    modeling. Reviewers judge whether plans are reasonable, code is executable, and outputs match the goal. Planning quality is consistently strong, while
-    execution failures often trace to external tools. Automated code repair reduces manual intervention by turning runtime errors into targeted fixes.
-  </p>
-</section>
+  <section aria-labelledby="conclusion">
+    <h2 id="conclusion">Conclusion</h2>
+    <p>
+      This review frames network-based integrative multi-omics as a bridge between large molecular datasets and biologically meaningful insight. Its main value is the way it organizes the field by integration strategy, method family, tool behavior, and application type. That structure makes the paper a practical guide for researchers who want to move beyond descriptive omics and design analyses that are more mechanistic, interpretable, and clinically relevant.
+    </p>
+  </section>
 
-<section aria-labelledby="deployment">
-  <h2 id="deployment">Deployment, Guardrails, and Remaining Gaps</h2>
-  <p>
-    AutoBA supports privacy-aware use by relying on dataset descriptions rather than uploading raw files, and by enabling local model deployment when needed.
-    The system incorporates safety measures such as constrained execution environments and command restrictions. Current gaps include sensitivity to tool
-    installation quirks, uneven support for niche methods, and limited guarantees about optimal parameter choices. Better tool standardization and richer
-    domain knowledge are clear directions for improving reliability.
-  </p>
-</section>
+  <section aria-labelledby="citation">
+    <h2 id="citation">Citation</h2>
+    <p>
+      Agamah, F. E., Bayjanov, J. R., Niehues, A., Njoku, K. F., Skelton, M., Mazandu, G. K., Ederveen, T. H. A., Mulder, N., Chimusa, E. R., &amp; 't Hoen, P. A. C. (2022). Computational approaches for network-based integrative multi-omics analysis. Frontiers in molecular biosciences, 9, 967205. https://doi.org/10.3389/fmolb.2022.967205.
+    </p>
+  </section>
 
-<section aria-labelledby="conclusion">
-  <h2 id="conclusion">Conclusion</h2>
-  <p>
-    AutoBA shows how a language model agent can move from chat-based assistance to automated multi-omic analysis that plans, runs, and documents a workflow.
-    Its memory and repair mechanisms target common pain points in day-to-day bioinformatics: keeping state, handling failures, and producing reproducible
-    outputs. With broader evaluation and more standardized tooling, agent-driven automation could reduce analysis bottlenecks and make multi-omics more
-    accessible to many research teams.
-  </p>
-</section>
-
-<section aria-labelledby="citation">
-  <h2 id="citation">Citation</h2>
-  <p>
-    Zhou, J., Zhang, B., Li, G., Chen, X., Li, H., Xu, X., Chen, S., He, W., Xu, C., Liu, L., &amp; Gao, X. (2024). An AI Agent for Fully Automated Multi-Omic Analyses. Advanced science (Weinheim, Baden-Wurttemberg, Germany), 11(44), e2407094. https://doi.org/10.1002/advs.202407094.
-  </p>
-</section>
-
-<section aria-labelledby="note">
-  <h2 id="note">Note</h2>
-  <p>
-    This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
-  </p>
-  <p>
-    By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
-  </p>
-</section>
+  <section aria-labelledby="note">
+    <h2 id="note">Note</h2>
+    <p>
+      This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
+    </p>
+    <p>
+      By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
+    </p>
+  </section>
