@@ -1,87 +1,114 @@
-<!-- HTML Part 1 (Title → End of Key Findings) -->
-  <header>
-    <h1><em>How Network-based Multi-omics Integration Clarifies Disease Biology</em></h1>
-  </header>
-
-  <section aria-labelledby="abstract">
-    <p>
-      Modern biology can measure many molecular layers at once, but the harder task is combining them into one interpretable model of disease. This review explains how <strong>network-based multi-omics</strong> analysis helps solve that problem by treating molecules and their relationships as connected systems instead of isolated feature lists. It outlines the main computational strategies, the kinds of biological questions they answer, and the practical limits that still shape the field.
-    </p>
-  </section>
-
-  <section aria-labelledby="framework-overview">
-    <h2 id="framework-overview">Why Network-based Integration Matters in Multi-omics</h2>
-    <p>
-      Single-omics studies can uncover useful signals, but they often miss how genomic, transcriptomic, proteomic, metabolomic, and other layers influence one another. The review argues that network-based integration is powerful because it represents biological systems as connected graphs, where nodes capture molecules or samples and edges capture similarity, regulation, or interaction. This structure helps researchers move from parallel measurements toward mechanism-focused interpretation.
-    </p>
-    <p>
-      Agamah and colleagues divide the field into two broad strategies. In multi-stage analysis, each omics layer is examined first and then compared across layers. In multi-modal analysis, several layers are integrated together in one framework. The paper then emphasizes three major method families: machine learning-driven network methods, diffusion or propagation methods, and causality or network inference methods. Together, these approaches can support biomarker discovery, patient stratification, cross-layer crosstalk analysis, candidate driver prioritization, and drug-focused studies.
-    </p>
-  </section>
-
-  <section aria-labelledby="key-findings">
-    <h2 id="key-findings">Key Findings from Network-based Multi-omics Research</h2>
-    <ul>
-      <li><strong>Networks connect biology across layers.</strong> They organize separate omics measurements into linked systems that better reflect cellular function.</li>
-      <li><strong>Two integration styles dominate.</strong> Studies either combine results after separate analyses or integrate multiple layers jointly from the outset.</li>
-      <li><strong>Three method families anchor the field.</strong> The review centers on machine learning, diffusion or propagation, and causal inference approaches.</li>
-      <li><strong>The framework supports diverse outputs.</strong> These methods can identify biomarkers, disease subtypes, subnetworks, crosstalk patterns, and candidate drivers.</li>
-      <li><strong>Method choice should follow the question.</strong> Different tools are better for clustering, ranking, signal spreading, or directional inference.</li>
-      <li><strong>Translation still depends on rigor.</strong> Heterogeneity, reproducibility, sparse data, and interpretability remain major obstacles.</li>
-    </ul>
-  </section>
-  <!-- End of Key Findings -->
-
-  <!-- HTML Part 2 (Figure Caption → End) -->
-  <section aria-labelledby="figure1">
-    <figure>
-      <figcaption>
-        <em>Figure 1.</em> Overview of network-based multi-omics integration. Processed omics profiles, with optional prior biological knowledge, feed into either a multi-stage workflow or a multi-modal workflow. These can then be analyzed with machine learning, diffusion or propagation, or causal inference methods, producing layered networks that reveal within-layer interactions and cross-layer crosstalk. Source: Adapted from Agamah et al. (2022), <em>Frontiers in Molecular Biosciences</em>.
-      </figcaption>
-    </figure>
-  </section>
-
-  <section aria-labelledby="integration-strategies">
-    <h2 id="integration-strategies">Integration Strategies</h2>
-    <p>
-      The paper presents multi-stage and multi-modal integration as the first major decision in study design. Multi-stage workflows are often easier to manage because each omics layer keeps its own preprocessing and analysis pipeline, but they can miss deeper joint structure. Multi-modal workflows better reflect interacting biology because layers are analyzed together from the start. That choice influences how features are compared, how networks are constructed, and how strongly cross-layer relationships can be detected.
-    </p>
-  </section>
-
-  <section aria-labelledby="method-families">
-    <h2 id="method-families">Method Families</h2>
-    <p>
-      Machine learning methods are useful for clustering, classification, feature ranking, and biomarker extraction in high-dimensional data. Diffusion and propagation methods are especially helpful when the goal is to trace how disease-associated signal moves through a network and to prioritize connected genes, pathways, or subnetworks. Causal and network inference methods attempt to estimate directed or conditional relationships, making them especially relevant when researchers want to propose likely drivers rather than only correlated markers.
-    </p>
-  </section>
-
-  <section aria-labelledby="applications-limits">
-    <h2 id="applications-limits">Applications and Limits</h2>
-    <p>
-      The review makes clear that network-based integration is useful for more than one biological task. It can be applied to crosstalk analysis, disease progression and subtype prediction, candidate driver identification, and drug discovery through heterogeneous networks that combine molecular and pharmacologic information. At the same time, the authors emphasize persistent limitations: biological heterogeneity, sparse measurements, reproducibility concerns, and difficulty in interpreting complex models. They argue that more standardized frameworks and hybrid tools will be important for future progress.
-    </p>
-  </section>
-
-  <section aria-labelledby="conclusion">
-    <h2 id="conclusion">Conclusion</h2>
-    <p>
-      This review frames network-based integrative multi-omics as a bridge between large molecular datasets and biologically meaningful insight. Its main value is the way it organizes the field by integration strategy, method family, tool behavior, and application type. That structure makes the paper a practical guide for researchers who want to move beyond descriptive omics and design analyses that are more mechanistic, interpretable, and clinically relevant.
-    </p>
-  </section>
-
-  <section aria-labelledby="citation">
-    <h2 id="citation">Citation</h2>
-    <p>
-      Agamah, F. E., Bayjanov, J. R., Niehues, A., Njoku, K. F., Skelton, M., Mazandu, G. K., Ederveen, T. H. A., Mulder, N., Chimusa, E. R., &amp; 't Hoen, P. A. C. (2022). Computational approaches for network-based integrative multi-omics analysis. Frontiers in molecular biosciences, 9, 967205. https://doi.org/10.3389/fmolb.2022.967205.
-    </p>
-  </section>
-
-  <section aria-labelledby="note">
-    <h2 id="note">Note</h2>
-    <p>
-      This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details, please refer to the source article.
-    </p>
-    <p>
-      By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
-    </p>
-  </section>
+<!-- HTML Part 1 (Title -> End of Key Findings) -->
+<header>
+<h1><em>Deep  Learning  Meets  Multi-Omics:  Personalized  Cardiovascular  Risk  Prediction  Through  Integrated  Proteomic  and
+Metabolomic Profiling</em></h1>
+</header>
+<section aria-labelledby="abstract">
+<p>
+Cardiovascular disease remains a leading cause of death worldwide, and early identification of individuals at elevated risk is critical
+for  effective  prevention.  While  traditional  clinical  risk  factors  provide  a  foundation,  they  often  fail  to  capture  the  full  biological
+complexity underlying heart and vascular disorders. A recent study published in Nature Communications introduces a deep learning
+framework called CardiOmicScore that combines proteomic and metabolomic data to generate personalized risk scores for six major
+cardiovascular conditions, demonstrating how multi-omics integration can substantially improve prediction accuracy.
+</p>
+</section>
+<section aria-labelledby="overview">
+<h2 id="overview">Multi-Omics Deep Learning for Cardiovascular Risk Stratification</h2>
+<p>
+The study leveraged data from the UK Biobank, drawing on clinical records, genomic information, and molecular measurements from
+large participant cohorts. The researchers designed two parallel multitask neural networks within the CardiOmicScore framework. The
+first network, ProNet, analyzed 2,920 circulating proteins to produce a proteomic risk score (ProScore) for each of six cardiovascular
+diseases.  The  second  network,  MetNet,  processed  168  blood  metabolites  to  generate  a  corresponding  metabolomic  risk  score
+(MetScore). Both networks shared a common architecture with disease-specific output layers, allowing them to learn patterns across
+multiple  conditions  simultaneously.  By  training  these  models  on  metabolomics-only  and  proteomics-only  cohorts  separately,  the
+authors ensured robust and unbiased evaluation. The six conditions examined included coronary artery disease, stroke, heart failure,
+atrial fibrillation, peripheral artery disease, and venous thromboembolism, covering a broad spectrum of cardiovascular pathology.
+</p>
+</section>
+<section aria-labelledby="key-findings">
+<h2 id="key-findings">Key Findings</h2>
+<ul>
+<li><strong>Strong  proteomic  prediction:</strong>  ProScore  demonstrated  strong  discriminative  ability  across  all  six  cardiovascular
+diseases, achieving C-index values between 0.69 and 0.82.</li>
+<li><strong>Meaningful  metabolomic  stratification:</strong>  MetScore  also  provided  effective  risk  stratification,  with  C-index  values
+ranging from 0.64 to 0.74 across the six conditions.</li>
+<li><strong>Enhanced combined accuracy:</strong> Combining proteomic and metabolomic scores with traditional clinical predictors
+improved the C-index by 0.005 to 0.102 compared to clinical data alone.</li>
+<li><strong>Long-range  prediction:</strong>  Risk  prediction  was  achievable  up  to  15  years  before  disease  onset,  highlighting  the
+potential for early intervention and prevention.</li>
+<li><strong>Proteomic dominance:</strong> Proteomics emerged as the dominant contributor to improved prediction, outperforming
+both metabolomics and polygenic risk scores when used independently.</li>
+<li><strong>Novel  biomarker  candidates:</strong>  The  framework  identified  key  disease-associated  proteins  and  metabolites  that
+may serve as promising biomarkers for targeted therapeutic development.</li>
+</ul>
+</section>
+<!-- End of Key Findings -->
+<!-- HTML Part 2 (Figure Caption -> End) -->
+<figure aria-labelledby="fig-alt">
+<figcaption>
+<em>Figure  1</em>:  Study  design  overview  illustrating  the  data  extraction  pipeline  from  the  UK  Biobank,  the  two-stage  data
+partitioning  strategy,  and  the  CardiOmicScore  framework  architecture  for  generating  proteomic  and  metabolomic  risk  scores  across
+six cardiovascular diseases. Adapted from Luo et al. (2026), Nature Communications.
+</figcaption>
+</figure>
+<section aria-labelledby="section-one">
+<h2 id="section-one">The Role of Proteomics in Cardiovascular Prediction</h2>
+<p>
+Among  the  molecular  data  layers  examined,  proteomics  provided  the  greatest  predictive  gains.  ProScore  consistently  outperformed
+MetScore and polygenic risk scores across all six conditions. When combined with standard clinical variables such as age, sex, and
+established  biomarkers,  the  proteomic  risk  score  increased  the  C-index  by  0.040  to  0.101.  This  finding  underscores  the  richness  of
+the  circulating  proteome  as  a  window  into  cardiovascular  pathophysiology.  The  proteins  flagged  by  the  model  spanned  pathways
+related  to  inflammation,  coagulation,  and  lipid  metabolism,  offering  potential  targets  for  drug  development  and  future  biomarker
+validation studies.
+</p>
+</section>
+<section aria-labelledby="section-two">
+<h2 id="section-two">Metabolomics as a Complementary Layer</h2>
+<p>
+While metabolomics provided more modest improvements than proteomics, it offered distinct and complementary biological
+information. MetScore captured metabolic signatures related to energy balance, amino acid metabolism, and lipid profiles that were
+not  fully  represented  in  the  proteomic  data.  The  combination  of  both  omics  layers  with  clinical  and  genetic  predictors  produced  the
+highest  overall  predictive  accuracy  for  most  conditions  studied.  This  complementarity  highlights  the  value  of  layering  multiple
+molecular  measurement  types  rather  than  relying  on  a  single  data  source,  as  each  captures  different  aspects  of  the  biological
+processes driving cardiovascular risk.
+</p>
+</section>
+<section aria-labelledby="section-three">
+<h2 id="section-three">Implications for Precision Cardiovascular Medicine</h2>
+<p>
+The ability to predict cardiovascular events up to 15 years in advance opens important opportunities for early screening and targeted
+prevention.  By  identifying  high-risk  individuals  long  before  symptoms  appear,  clinicians  could  implement  lifestyle  modifications,
+pharmacological  interventions,  or  closer  monitoring  at  a  stage  when  prevention  is  most  effective.  The  CardiOmicScore  framework
+also  demonstrates  the  feasibility  of  integrating  multi-omics  data  into  scalable  computational  tools  suitable  for  clinical  settings.
+However,  the  authors  note  that  external  validation  in  independent  cohorts  and  across  diverse  populations  will  be  necessary  before
+such models can be adopted in routine clinical practice.
+</p>
+</section>
+<section aria-labelledby="conclusion">
+<h2 id="conclusion">Conclusion</h2>
+<p>
+This  study  illustrates  how  combining  deep  learning  with  multi-omics  profiling  can  push  cardiovascular  risk  prediction  beyond  the
+limitations  of  traditional  approaches.  The  CardiOmicScore  framework  demonstrates  that  proteomic  and  metabolomic  data  offer
+meaningful,  complementary  contributions  to  disease  risk  assessment.  As  large-scale  biobanks  and  high-throughput  molecular
+technologies become more accessible, integrating multiple biological data layers into clinical decision-making may become a practical
+reality, advancing the goal of truly personalized cardiovascular prevention strategies.
+</p>
+</section>
+<section aria-labelledby="citation">
+<h2 id="citation">Citation</h2>
+<p>
+Luo, Y., Zhang, N., Yang, J., Cui, M., Tsoi, K. K. F., Lip, G. Y. H., Liu, T., & Zhang, Q. (2026). AI-based multiomics profiling reveals
+complementary  omics  contributions  to  personalized  prediction  of  cardiovascular  disease.  Nature  Communications,  17,  2269.
+https://doi.org/10.1038/s41467-026-68956-6
+</p>
+</section>
+<section aria-labelledby="note">
+<h2 id="note">Note</h2>
+<p>
+This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details,
+please refer to the source article.
+</p>
+<p>
+By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
+</p>
+</section>
