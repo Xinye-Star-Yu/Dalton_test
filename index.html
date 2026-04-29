@@ -1,114 +1,123 @@
 <!-- HTML Part 1 (Title -> End of Key Findings) -->
-<header>
-<h1><em>Deep  Learning  Meets  Multi-Omics:  Personalized  Cardiovascular  Risk  Prediction  Through  Integrated  Proteomic  and
-Metabolomic Profiling</em></h1>
-</header>
+<section>
+<h1><em>Multi-Omics Discovery of FCGR2B as an Immunosuppressive Driver in High-Grade Serous Ovarian 
+  Cancer</em></h1>
+</section>
 <section aria-labelledby="abstract">
 <p>
-Cardiovascular disease remains a leading cause of death worldwide, and early identification of individuals at elevated risk is critical
-for  effective  prevention.  While  traditional  clinical  risk  factors  provide  a  foundation,  they  often  fail  to  capture  the  full  biological
-complexity underlying heart and vascular disorders. A recent study published in Nature Communications introduces a deep learning
-framework called CardiOmicScore that combines proteomic and metabolomic data to generate personalized risk scores for six major
-cardiovascular conditions, demonstrating how multi-omics integration can substantially improve prediction accuracy.
+Epithelial ovarian cancer encompasses five histological subtypes with distinct genetic and immunological 
+  profiles, yet the mechanisms connecting plasma proteins to immune regulation and tumor progression remain 
+  poorly understood. A recent study published in Translational Oncology employed a comprehensive multi-omics
+   framework, integrating genome-wide association data, plasma proteomics, and immune cell trait 
+  measurements across two large cohorts to map subtype-specific protein-immune regulatory networks. Through 
+  this integrative approach, the investigators identified FCGR2B as a causal plasma protein that promotes 
+  immunosuppression and disease progression specifically in high-grade serous ovarian cancer (HGSOC).
 </p>
 </section>
 <section aria-labelledby="overview">
-<h2 id="overview">Multi-Omics Deep Learning for Cardiovascular Risk Stratification</h2>
+<h2 id="overview">Integrative Multi-Omics Framework for Ovarian Cancer Subtyping</h2>
 <p>
-The study leveraged data from the UK Biobank, drawing on clinical records, genomic information, and molecular measurements from
-large participant cohorts. The researchers designed two parallel multitask neural networks within the CardiOmicScore framework. The
-first network, ProNet, analyzed 2,920 circulating proteins to produce a proteomic risk score (ProScore) for each of six cardiovascular
-diseases.  The  second  network,  MetNet,  processed  168  blood  metabolites  to  generate  a  corresponding  metabolomic  risk  score
-(MetScore). Both networks shared a common architecture with disease-specific output layers, allowing them to learn patterns across
-multiple  conditions  simultaneously.  By  training  these  models  on  metabolomics-only  and  proteomics-only  cohorts  separately,  the
-authors ensured robust and unbiased evaluation. The six conditions examined included coronary artery disease, stroke, heart failure,
-atrial fibrillation, peripheral artery disease, and venous thromboembolism, covering a broad spectrum of cardiovascular pathology.
+The research team constructed protein-immune-cancer regulatory landscapes using a three-stage Mendelian 
+  randomization pipeline. In the first stage, subtype-stratified GWAS data from two independent EOC cohorts 
+  (comprising over 15,000 and 13,000 HGSOC cases, respectively) were cross-referenced with plasma protein 
+  quantitative trait loci derived from more than 35,000 individuals. The second stage incorporated immune 
+  cell trait data from nearly 4,000 participants to identify proteins that causally influence immune 
+  phenotypes. The third stage linked these protein-immune axes to EOC subtype risk. This approach uncovered 
+  20 distinct subtype-specific regulatory axes. Among these, FCGR2B stood out as the most significant causal
+   protein for HGSOC, warranting further investigation through single-cell RNA sequencing and multiplex 
+  immunofluorescence.
 </p>
 </section>
 <section aria-labelledby="key-findings">
 <h2 id="key-findings">Key Findings</h2>
 <ul>
-<li><strong>Strong  proteomic  prediction:</strong>  ProScore  demonstrated  strong  discriminative  ability  across  all  six  cardiovascular
-diseases, achieving C-index values between 0.69 and 0.82.</li>
-<li><strong>Meaningful  metabolomic  stratification:</strong>  MetScore  also  provided  effective  risk  stratification,  with  C-index  values
-ranging from 0.64 to 0.74 across the six conditions.</li>
-<li><strong>Enhanced combined accuracy:</strong> Combining proteomic and metabolomic scores with traditional clinical predictors
-improved the C-index by 0.005 to 0.102 compared to clinical data alone.</li>
-<li><strong>Long-range  prediction:</strong>  Risk  prediction  was  achievable  up  to  15  years  before  disease  onset,  highlighting  the
-potential for early intervention and prevention.</li>
-<li><strong>Proteomic dominance:</strong> Proteomics emerged as the dominant contributor to improved prediction, outperforming
-both metabolomics and polygenic risk scores when used independently.</li>
-<li><strong>Novel  biomarker  candidates:</strong>  The  framework  identified  key  disease-associated  proteins  and  metabolites  that
-may serve as promising biomarkers for targeted therapeutic development.</li>
+<li>A three-stage Mendelian randomization framework identified 20 subtype-specific protein-immune-EOC 
+  regulatory axes across five histological subtypes of epithelial ovarian cancer.</li>
+<li>FCGR2B was identified as a causal plasma protein that drives immune suppression and tumor progression 
+  specifically in HGSOC, with elevated expression strongly associated with shorter progression-free 
+  survival.</li>
+<li>Single-cell analysis and multiplex immunofluorescence revealed that FCGR2B is predominantly expressed in
+   tumor-associated macrophages and is spatially colocalized with macrophage markers CD68 and CD14.</li>
+<li>FCGR2B knockdown in macrophages reduced M2-like polarization from 55.90% to 38.70% and increased 
+  phagocytic activity from 7.98% to 16.83%, indicating functional reversal of immunosuppression.</li>
+<li>Transcriptomic profiling of FCGR2B-knockdown macrophages revealed altered NF-kB signaling, suggesting 
+  therapeutic vulnerability to NF-kB pathway inhibitors.</li>
 </ul>
 </section>
 <!-- End of Key Findings -->
 <!-- HTML Part 2 (Figure Caption -> End) -->
-<figure aria-labelledby="fig-alt">
-<figcaption>
-<em>Figure  1</em>:  Study  design  overview  illustrating  the  data  extraction  pipeline  from  the  UK  Biobank,  the  two-stage  data
-partitioning  strategy,  and  the  CardiOmicScore  framework  architecture  for  generating  proteomic  and  metabolomic  risk  scores  across
-six cardiovascular diseases. Adapted from Luo et al. (2026), Nature Communications.
-</figcaption>
+<section aria-labelledby="figure1">
+<figure>
+<figcaption><em>Figure 1.</em> Genome-wide landscape and locus-specific analyses of epithelial ovarian 
+  cancer (EOC) GWAS signals. Panels A and B show Manhattan plots of subtype-specific GWAS signals across 
+  five EOC subtypes from two independent cohorts. Panel C displays a circos plot mapping lead risk loci and 
+  candidate genes. Panel D presents an upset plot of genome-wide significant lead loci. Panels E and F show 
+  regional association and LocusCompare plots illustrating colocalization between GWAS and cis-pQTL signals 
+  on chromosome 22. Adapted from Zhou et al. (2026). Translational Oncology.</figcaption>
 </figure>
+</section>
 <section aria-labelledby="section-one">
-<h2 id="section-one">The Role of Proteomics in Cardiovascular Prediction</h2>
+<h2 id="section-one">FCGR2B Localization in Tumor-Associated Macrophages</h2>
 <p>
-Among  the  molecular  data  layers  examined,  proteomics  provided  the  greatest  predictive  gains.  ProScore  consistently  outperformed
-MetScore and polygenic risk scores across all six conditions. When combined with standard clinical variables such as age, sex, and
-established  biomarkers,  the  proteomic  risk  score  increased  the  C-index  by  0.040  to  0.101.  This  finding  underscores  the  richness  of
-the  circulating  proteome  as  a  window  into  cardiovascular  pathophysiology.  The  proteins  flagged  by  the  model  spanned  pathways
-related  to  inflammation,  coagulation,  and  lipid  metabolism,  offering  potential  targets  for  drug  development  and  future  biomarker
-validation studies.
+Using single-cell RNA sequencing, the investigators mapped FCGR2B expression across the HGSOC tumor 
+  microenvironment and found it predominantly enriched in tumor-associated macrophages (TAMs). Multiplex 
+  immunofluorescence confirmed spatial colocalization of FCGR2B protein with macrophage markers CD68 and 
+  CD14 within tumor tissue. Importantly, FCGR2B-positive macrophages exhibited an M2-like polarization 
+  phenotype, which is typically associated with immunosuppressive functions including dampened anti-tumor 
+  immunity and promotion of tumor growth. Survival analysis across multiple independent HGSOC cohorts 
+  consistently demonstrated that higher FCGR2B expression correlated with reduced progression-free survival,
+   reinforcing its prognostic significance.
 </p>
 </section>
 <section aria-labelledby="section-two">
-<h2 id="section-two">Metabolomics as a Complementary Layer</h2>
+<h2 id="section-two">Functional Validation and NF-kB Signaling</h2>
 <p>
-While metabolomics provided more modest improvements than proteomics, it offered distinct and complementary biological
-information. MetScore captured metabolic signatures related to energy balance, amino acid metabolism, and lipid profiles that were
-not  fully  represented  in  the  proteomic  data.  The  combination  of  both  omics  layers  with  clinical  and  genetic  predictors  produced  the
-highest  overall  predictive  accuracy  for  most  conditions  studied.  This  complementarity  highlights  the  value  of  layering  multiple
-molecular  measurement  types  rather  than  relying  on  a  single  data  source,  as  each  captures  different  aspects  of  the  biological
-processes driving cardiovascular risk.
+To validate the functional role of FCGR2B, the team performed knockdown experiments in macrophage cell 
+  models. Silencing FCGR2B significantly shifted macrophage polarization away from the immunosuppressive M2 
+  phenotype and enhanced phagocytic activity against tumor cells. Co-culture systems further demonstrated 
+  that FCGR2B knockdown in macrophages led to reduced proliferation and increased apoptosis of ovarian 
+  cancer cells. RNA sequencing of FCGR2B-depleted macrophages revealed substantial alterations in the NF-kB 
+  signaling pathway, a key regulator of inflammation and immune responses. These findings position FCGR2B as
+   a functional mediator of macrophage-driven immunosuppression in the HGSOC microenvironment.
 </p>
 </section>
 <section aria-labelledby="section-three">
-<h2 id="section-three">Implications for Precision Cardiovascular Medicine</h2>
+<h2 id="section-three">Therapeutic Prospects and Clinical Relevance</h2>
 <p>
-The ability to predict cardiovascular events up to 15 years in advance opens important opportunities for early screening and targeted
-prevention.  By  identifying  high-risk  individuals  long  before  symptoms  appear,  clinicians  could  implement  lifestyle  modifications,
-pharmacological  interventions,  or  closer  monitoring  at  a  stage  when  prevention  is  most  effective.  The  CardiOmicScore  framework
-also  demonstrates  the  feasibility  of  integrating  multi-omics  data  into  scalable  computational  tools  suitable  for  clinical  settings.
-However,  the  authors  note  that  external  validation  in  independent  cohorts  and  across  diverse  populations  will  be  necessary  before
-such models can be adopted in routine clinical practice.
+Drug-gene correlation analyses indicated that patients with high FCGR2B expression may respond favorably to 
+  MEK inhibitors. Furthermore, agents such as BI-1206, an FCGR2B-blocking monoclonal antibody currently in 
+  clinical trials, represent a targeted strategy for disrupting FCGR2B-mediated immunosuppression. The study
+   highlights the potential for combining FCGR2B-targeted therapies with existing immunotherapy approaches 
+  to restore anti-tumor immunity in HGSOC patients who exhibit high FCGR2B expression and immunosuppressive 
+  tumor microenvironments.
 </p>
 </section>
 <section aria-labelledby="conclusion">
 <h2 id="conclusion">Conclusion</h2>
 <p>
-This  study  illustrates  how  combining  deep  learning  with  multi-omics  profiling  can  push  cardiovascular  risk  prediction  beyond  the
-limitations  of  traditional  approaches.  The  CardiOmicScore  framework  demonstrates  that  proteomic  and  metabolomic  data  offer
-meaningful,  complementary  contributions  to  disease  risk  assessment.  As  large-scale  biobanks  and  high-throughput  molecular
-technologies become more accessible, integrating multiple biological data layers into clinical decision-making may become a practical
-reality, advancing the goal of truly personalized cardiovascular prevention strategies.
+This study presents a genetically informed, multi-omics framework that identifies FCGR2B as a key 
+  immunoregulatory protein in HGSOC. By integrating GWAS, plasma proteomics, immune cell traits, single-cell
+   transcriptomics, and functional validation, the researchers established FCGR2B as both a prognostic 
+  biomarker and a potential therapeutic target. The work underscores the value of subtype-specific analyses 
+  and multi-layered omics integration for uncovering actionable molecular targets in complex malignancies.
 </p>
 </section>
 <section aria-labelledby="citation">
 <h2 id="citation">Citation</h2>
 <p>
-Luo, Y., Zhang, N., Yang, J., Cui, M., Tsoi, K. K. F., Lip, G. Y. H., Liu, T., & Zhang, Q. (2026). AI-based multiomics profiling reveals
-complementary  omics  contributions  to  personalized  prediction  of  cardiovascular  disease.  Nature  Communications,  17,  2269.
-https://doi.org/10.1038/s41467-026-68956-6
+Zhou, J., Zeng, T., Ye, M., Li, M., Wen, L., Liu, X., Zhang, Z., &amp; Meng, Y. (2026). Unmasking FCGR2B as 
+  a high-grade serous ovarian cancer specific marker of immune suppression and tumor progression through 
+  multi-omics mining. <em>Translational Oncology, 67</em>, 102748. 
+  https://doi.org/10.1016/j.tranon.2026.102748
 </p>
 </section>
 <section aria-labelledby="note">
-<h2 id="note">Note</h2>
-<p>
-This blog post summarizes findings from the above-cited research. Figures are adapted from the original publication. For full details,
-please refer to the source article.
-</p>
-<p>
-By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
-</p>
+ <h2 id="note">Note</h2>
+ <p>
+ This blog post summarizes findings from the above-cited research. Figures are adapted from the original 
+   publication. For full details, please refer to the source article.
+ </p>
+ <p>
+ By Xinye Yu, Dalton Bioanalytics, specializing in multiomics analysis
+ </p>
 </section>
